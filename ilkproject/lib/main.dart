@@ -5,7 +5,7 @@ import 'ui/home.dart';
  //void main() => runApp(const ScaffoldExemple());
 
 void main() => runApp(MaterialApp(
-  home: BizCard(),
+  home: Wisdom(),
 ));
 
 

@@ -1,6 +1,77 @@
-// ignore_for_file: unused_local_variable, prefer_const_literals_to_create_immutables
+// ignore_for_file: unused_local_variable, prefer_const_literals_to_create_immutables, deprecated_member_use
 
 import 'package:flutter/material.dart';
+
+class Wisdom extends StatefulWidget {
+  const Wisdom({ Key? key }) : super(key: key);
+
+  @override
+  State<Wisdom> createState() => _wisdomState();
+}
+
+class _wisdomState extends State<Wisdom> {
+  @override
+
+  int _index = 0;
+
+  List quotes = [
+
+       "Life isn’t about getting and having, it’s about giving and being.",
+
+       "Whatever the mind of man can conceive and believe, it can achieve.",
+
+       "Strive not to be a success, but rather to be of value.",
+
+  ];
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // ignore: avoid_unnecessary_containers
+            Expanded(
+              child: Center(
+                child: Container(
+                  width: 350,
+                  height: 200,
+                  margin: EdgeInsets.all(20.0),
+                  decoration: BoxDecoration(
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.circular(14.5)
+                  ),
+                  child: Center(child: Text(quotes[_index % quotes.length]))),
+              ),
+            ),
+            Divider(thickness: 1.3),
+            Padding(
+              padding: const EdgeInsets.only(top:18.0),
+              child: FlatButton.icon(
+                onPressed:_showQuate,
+                color: Colors.orange.shade700,
+                icon: Icon(Icons.wb_sunny),
+                label: Text("Inspire me!" ,style:TextStyle(
+                  color: Colors.white,
+                ))
+              ),
+            ),
+            Spacer()
+          ],
+        )
+      )
+    );
+  }
+
+  void _showQuate() {
+
+    //increment by 0;
+    //we have to use setState to make samething moving
+    setState(() {
+       _index += 1;
+    });
+   
+  }
+}
 
 class BizCard extends StatelessWidget {
   const BizCard({ Key? key }) : super(key: key);
@@ -74,7 +145,6 @@ class BizCard extends StatelessWidget {
        );
   }
 }
-
 
 class ScaffoldExemple extends StatelessWidget {
   const ScaffoldExemple({Key? key}) : super(key: key);
