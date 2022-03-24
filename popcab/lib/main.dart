@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:popcab/pokedetail.dart';
 import 'dart:convert';
+import 'dart:async';
 import 'package:popcab/pokemon.dart';
 
 
@@ -54,8 +55,7 @@ class _HomePageState extends State<HomePage> {
         ) 
       :GridView.count(
               crossAxisCount: 2,
-              children: pokeHub.pokemon
-                  .map((poke) => Padding(
+              children: pokeHub.pokemon.map((poke) => Padding(
                         padding: const EdgeInsets.all(2.0),
                         child: InkWell(
                           onTap: () {
