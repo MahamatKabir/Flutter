@@ -1,6 +1,8 @@
-import 'dart:io';
 
+
+import 'package:dersproject/tasarim.dart';
 import 'package:flutter/material.dart';
+
 
 void main() {
   runApp(const MaterialApp(
@@ -14,6 +16,8 @@ class Sayfa extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+   
+    
     return Scaffold(
       appBar: AppBar(
         title: const Text('Homepage'),
@@ -28,23 +32,23 @@ class Sayfa extends StatelessWidget {
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
-                  content: Text('Menu tıklandı '),
+                  content: Text('Menu tiklandi '),
                 ),
               );
             },
-            icon: Icon(Icons.access_alarm_rounded)
+            icon: const Icon(Icons.access_alarm_rounded)
           )
         ],
       ),
       drawer : Drawer(
         child: ListView(
           children: [
-            DrawerHeader(child: Text('Bilgisayar',))
+            const DrawerHeader(child: const Text('Bilgisayar',))
           ],
         )
       ),
       
-      body: const Center(child: Text('selam herkese manyak')),
+      body: Tasarim2(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           //....

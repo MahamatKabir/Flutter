@@ -49,7 +49,8 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text("Categorie"),
       ),
-      body: pokeHub == null 
+      // ignore: unnecessary_null_comparison
+      body: pokeHub == null
       ? Center(
         child:CircularProgressIndicator(),
         ) 
