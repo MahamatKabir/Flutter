@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:splashscree/classes/language.dart';
 import 'package:splashscree/routes/route_names.dart';
 
+import '../localization/localization_constants.dart';
+import '../main.dart';
+
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key, String? title}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> {  
 
   final GlobalKey<FormState> _key = GlobalKey<FormState>();
 
@@ -18,7 +21,25 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _changeLanguage(language) {
-    print(language.languageCode);
+    Locale _temp;
+
+    switch(language.languageCode) {
+      case 'tr':
+       _temp = Locale(language.languageCode, 'TR');
+       break;
+      case 'en':
+       _temp = Locale(language.languageCode, 'US');
+       break;
+      case 'fr':
+       _temp = Locale(language.languageCode, 'FR');
+       break;
+      case 'ar':
+       _temp = Locale(language.languageCode, 'SA');
+       break;
+      default:
+       _temp = Locale(language.languageCode,'US');
+    }
+    MyApp.setLocale(context, _temp);
   }
 
   @override
@@ -26,7 +47,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       drawer: _drawerList(),
       appBar: AppBar(
-        title: Text('Home Page'),
+        title: 
+        Text(getTranslated(context,'home_page')),
         actions: [
           Padding(
             padding: EdgeInsets.all(8.0),
@@ -35,8 +57,8 @@ class _HomePageState extends State<HomePage> {
                  _changeLanguage(language);
               },
              
-              underline:SizedBox(),
-              icon : Icon(
+              underline:const SizedBox(),
+              icon : const Icon(
                 Icons.language,
                 color: Colors.white,
               ),
@@ -74,7 +96,7 @@ class _HomePageState extends State<HomePage> {
             height: MediaQuery.of(context).size.height / 4,
             child: Center(
               child: Text(
-                'Personnel information',
+                getTranslated(context,'personal_info'),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize:30,
@@ -92,8 +114,8 @@ class _HomePageState extends State<HomePage> {
             },
             decoration: InputDecoration(
               border: OutlineInputBorder(),
-              labelText: 'Name',
-              hintText: 'Enter name',
+              labelText: getTranslated(context,'name'),
+              hintText: getTranslated(context,'name_hint'),
             ),
           ),
           SizedBox(
@@ -108,8 +130,8 @@ class _HomePageState extends State<HomePage> {
             },
             decoration: InputDecoration(
               border: OutlineInputBorder(),
-              labelText: 'Email',
-              hintText: 'Enter email adress',
+              labelText: getTranslated(context,'email'),
+              hintText: getTranslated(context,'email_hint'),
             ),
           ),
           SizedBox(

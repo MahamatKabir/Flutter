@@ -16,7 +16,7 @@ void main() {
 }
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({Key key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
   String url =
       "https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json";
 
-  late PokeHub pokeHub;
+   PokeHub pokeHub;
   @override
   void initState() {
     super.initState();
@@ -68,7 +68,7 @@ class _HomePageState extends State<HomePage> {
                                         )));
                           },
                           child: Hero(
-                            tag: poke.img!,
+                            tag: poke.img,
                             child: Card(
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -83,12 +83,12 @@ class _HomePageState extends State<HomePage> {
                                     decoration: BoxDecoration(
                                         image: DecorationImage(
                                             fit: BoxFit.cover,
-                                            image: NetworkImage(poke.img!)
+                                            image: NetworkImage(poke.img)
                                         )
                                       ),
                                   ),
                                   Text(
-                                    "${poke.name!}",
+                                    "${poke.name}",
                                     style: TextStyle(
                                       fontSize: 20.0,
                                       fontWeight: FontWeight.bold,

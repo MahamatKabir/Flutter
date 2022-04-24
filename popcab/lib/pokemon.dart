@@ -1,5 +1,5 @@
 class PokeHub {
-  List<Pokemon>? pokemon;
+  List<Pokemon> pokemon;
 
   PokeHub({this.pokemon});
 
@@ -7,7 +7,7 @@ class PokeHub {
     if (json['pokemon'] != null) {
       pokemon = <Pokemon>[];
       json['pokemon'].forEach((v) {
-        pokemon!.add(new Pokemon.fromJson(v));
+        pokemon.add(new Pokemon.fromJson(v));
       });
     }
   }
@@ -15,30 +15,30 @@ class PokeHub {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this.pokemon != null) {
-      data['pokemon'] = this.pokemon!.map((v) => v.toJson()).toList();
+      data['pokemon'] = this.pokemon.map((v) => v.toJson()).toList();
     }
     return data;
   }
 }
 
 class Pokemon {
-  int? id;
-  String? num;
-  String? name;
-  String? img;
-  List<String>? type;
-  String? height;
-  String? weight;
-  String? candy;
-  int? candyCount;
-  String? egg;
-  double? spawnChance;
-  String? avgSpawns;
-  String? spawnTime;
-  List<double>? multipliers;
-  List<String>? weaknesses;
-  List<NextEvolution>? nextEvolution;
-  List<PrevEvolution>? prevEvolution;
+  int id;
+  String num;
+  String name;
+  String img;
+  List<String> type;
+  String height;
+  String weight;
+  String candy;
+  int candyCount;
+  String egg;
+  double spawnChance;
+  String avgSpawns;
+  String spawnTime;
+  List<double> multipliers;
+  List<String> weaknesses;
+  List<NextEvolution> nextEvolution;
+  List<PrevEvolution> prevEvolution;
 
   Pokemon(
       {this.id,
@@ -78,13 +78,13 @@ class Pokemon {
     if (json['next_evolution'] != null) {
       nextEvolution = <NextEvolution>[];
       json['next_evolution'].forEach((v) {
-        nextEvolution!.add(new NextEvolution.fromJson(v));
+        nextEvolution.add(new NextEvolution.fromJson(v));
       });
     }
     if (json['prev_evolution'] != null) {
       prevEvolution = <PrevEvolution>[];
       json['prev_evolution'].forEach((v) {
-        prevEvolution!.add(new PrevEvolution.fromJson(v));
+        prevEvolution.add(new PrevEvolution.fromJson(v));
       });
     }
   }
@@ -108,11 +108,11 @@ class Pokemon {
     data['weaknesses'] = this.weaknesses;
     if (this.nextEvolution != null) {
       data['next_evolution'] =
-          this.nextEvolution!.map((v) => v.toJson()).toList();
+          this.nextEvolution.map((v) => v.toJson()).toList();
     }
     if (this.prevEvolution != null) {
       data['prev_evolution'] =
-          this.prevEvolution!.map((v) => v.toJson()).toList();
+          this.prevEvolution.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -125,8 +125,8 @@ class PrevEvolution {
 }
 
 class NextEvolution {
-  String? num;
-  String? name;
+  String num;
+  String name;
 
   NextEvolution({this.num, this.name});
 
