@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kalamna/constants.dart';
 import 'package:kalamna/models/Product.dart';
-
-import 'add_to_cart.dart';
-import 'color_and_size.dart';
-import 'counter_with_fav_btn.dart';
-import 'description.dart';
-import 'product_title_with_image.dart';
+import 'package:kalamna/screens/details/components/pushable_button.dart';
+import 'package:kalamna/screens/quiz/quiz_screen.dart';
 
 class Body extends StatelessWidget {
   final Product product;
@@ -30,23 +26,105 @@ class Body extends StatelessWidget {
                   SizedBox(
                     height: 70.0,
                   ),
-                  Text(
-                    product.title,
-                    style:
-                        TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
+                  PushableButton(
+                    child: Text.rich(
+                        TextSpan(
+                          children: <InlineSpan>[
+                            TextSpan(text: 'OKUMA'),
+                            WidgetSpan(
+                                child: Icon(
+                              Icons.ten_k,
+                              color: Colors.red,
+                              size: 20,
+                            )),
+                          ],
+                        ),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            fontFamily: 'Lobster')
+                    ),
+                    height: 60,
+                    elevation: 8,
+                    hslColor: HSLColor.fromAHSL(1.0, 255, 1.0, 0.37),
+                    shadow: BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: Offset(0, 2),
+                    ),
+                    onPressed: () {},
                   ),
-                  Text("Height: 50"),
-                  Text("Weight: 20"),
-                  Text(
-                    "Types",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                  PushableButton(
+                    child:  Text.rich(
+                        TextSpan(
+                          children: <InlineSpan>[
+                            TextSpan(text: 'Dinleme'),
+                            WidgetSpan(
+                                child: Icon(
+                              Icons.ten_k,
+                              color: Colors.red,
+                              size: 20,
+                            )),
+                          ],
+                        ),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            fontFamily: 'Lobster')
+                    ),
+                    height: 60,
+                    elevation: 8,
+                    hslColor: HSLColor.fromAHSL(1.0, 120, 1.0, 0.37),
+                    shadow: BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: Offset(0, 2),
+                    ),
+                    onPressed: () {},
                   ),
-                  Text("Weakness",
-                      style: TextStyle(fontWeight: FontWeight.bold)),
-                  
-                  Text("Next Evolution",
-                      style: TextStyle(fontWeight: FontWeight.bold)),
-                  
+                  PushableButton(
+                    child: Text.rich(
+                        TextSpan(
+                          children: <InlineSpan>[
+                            TextSpan(text: 'yazma'),
+                            WidgetSpan(
+                                child: Icon(
+                              Icons.grade,
+                              color: Colors.red,
+                              size: 20,
+                            )),
+                          ],
+                        ),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            fontFamily: 'Lobster')
+                    ),
+                    height: 60,
+                    elevation: 8,
+                    hslColor: HSLColor.fromAHSL(1.0, 0, 1.0, 0.37),
+                    shadow: BoxShadow(
+                      color:
+                          Color.fromARGB(255, 255, 254, 254).withOpacity(0.5),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: Offset(0, 2),
+                    ),
+                    onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => QuizScreen()),
+                  );
+                },
+                  ),
                 ],
               ),
             ),
@@ -54,28 +132,24 @@ class Body extends StatelessWidget {
           Align(
             alignment: Alignment.topCenter,
             child: ClipOval(
-                  
-                  //tag: "${product.id}",
-                  child: Image.asset(
-                    product.image,
-                    fit: BoxFit.fitHeight,
-                    height:220,
-                    width:220,
-                  ),
-                  
-                  
-                ),
-                
+              //tag: "${product.id}",
+              child: Image.asset(
+                product.image,
+                fit: BoxFit.fitHeight,
+                height: 200,
+                width: 200,
+              ),
+            ),
           )
         ],
       );
   @override
   Widget build(BuildContext context) {
     // It provide us total height and width
-    
+
     return Scaffold(
       backgroundColor: Colors.blue,
-       body: bodyWidget(context),
+      body: bodyWidget(context),
     );
     // return SingleChildScrollView(
     //   child: Column(
@@ -107,7 +181,7 @@ class Body extends StatelessWidget {
     //                   SizedBox(height: kDefaultPaddin / 2),
     //                   CounterWithFavBtn(),
     //                   SizedBox(height: kDefaultPaddin / 2),
-                      
+
     //                 ],
     //               ),
     //             ),

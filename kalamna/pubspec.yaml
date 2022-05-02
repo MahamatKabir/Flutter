@@ -35,6 +35,8 @@ dependencies:
   flutter_svg: ^1.0.3  #it help to us svg in our app
   flutter_bloc: ^8.0.1 
   rxdart: ^0.27.3
+  # state management, intelligent dependency injection, and route management
+  get: ^4.6.1 
   animated_splash_screen:
 
 dev_dependencies:

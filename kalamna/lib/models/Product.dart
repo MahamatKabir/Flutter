@@ -19,7 +19,15 @@ List<Product> products = [
   Product(
       id: 1,
       title: "Alfabe",
-      size: 12,
+      size: [
+        {
+          "id":1,
+          "question":"iki bul",
+          "options": ['1','2','3','4'],
+          'answer_index': 1,
+        }
+      ],
+     
       description: dummyText,
       image: "assets/images/alphabet.png",
       color: Color.fromARGB(255, 255, 255, 255)),

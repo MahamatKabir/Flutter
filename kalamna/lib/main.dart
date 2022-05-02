@@ -1,9 +1,7 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:kalamna/constants.dart';
-import 'package:kalamna/screens/home/home_screen.dart';
 import 'package:kalamna/screens/welcome_screen.dart';
-import 'package:kalamna/sidebar/sidebar_layout.dart';
 
 PageController pageController = PageController(initialPage: 0);
 int currentIndex = 0;
