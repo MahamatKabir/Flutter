@@ -33,6 +33,16 @@ class ControllerLearn {
       image: 'assets/images/animals.jpg',
       page: AnimalScreen(),
     ),
+     ModelLearn(
+      title: 'حيوانات',
+      image: 'assets/images/animals.jpg',
+      page: AnimalScreen(),
+    ),
+     ModelLearn(
+      title: 'حيوانات',
+      image: 'assets/images/animals.jpg',
+      page: AnimalScreen(),
+    ),
   ];
 
   static UnmodifiableListView<ModelLearn> get dataLearn =>

@@ -9,6 +9,8 @@ import 'package:kids_learning/views/learn_page.dart';
 import 'package:kids_learning/views/story_page.dart';
 
 import '../Component/navigation_bar.dart';
+import '../bigsidbar/sidebar/sidebar.dart';
+import '../bigsidbar/sidebar/sidebar_layout.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -28,7 +30,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarSimple(),
-      drawer: DrawerCustom(),
+      
       body: _pages[_indexPage],
       bottomNavigationBar: CustomNavigationBar(
         indexpage: _indexPage,

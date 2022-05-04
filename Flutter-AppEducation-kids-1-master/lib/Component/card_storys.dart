@@ -35,7 +35,7 @@ class CardStory extends StatelessWidget {
             elevation: 20,
             clipBehavior: Clip.antiAliasWithSaveLayer,
             child: Row(
-              children: [
+              children: [ 
                 Expanded(
                   flex: 2,
                   child: Center(

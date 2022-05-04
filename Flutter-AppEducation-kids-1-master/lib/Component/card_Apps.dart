@@ -24,7 +24,7 @@ class CardApps extends StatelessWidget {
         height: 200,
         child: Card(
           margin: EdgeInsets.symmetric(horizontal: 3, vertical: 3),
-          color: Colors.indigo[50],
+          color: Color.fromARGB(255, 15, 37, 161),
           elevation: 10,
           clipBehavior: Clip.antiAliasWithSaveLayer,
           child: Column(

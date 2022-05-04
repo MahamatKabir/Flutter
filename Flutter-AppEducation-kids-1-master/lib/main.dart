@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kids_learning/views/home_page.dart';
 
+import 'bigsidbar/sidebar/sidebar_layout.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: HomePage(),
+      home: SideBarLayout(),
     );
   }
 }
