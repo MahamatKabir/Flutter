@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:kids_learning/Model/m_learn.dart';
+import 'package:kids_learning/constants.dart';
 
 class CardLearn extends StatelessWidget {
   final ModelLearn data;
@@ -26,35 +27,36 @@ class CardLearn extends StatelessWidget {
         print("My");
         _navigate(context, screen);
       },
-      child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-        color: Colors.orange[200],
-        height: 100,
-        child: Card(
-            margin: EdgeInsets.symmetric(horizontal: 3, vertical: 3),
-            color: Colors.orange[50],
-            elevation: 20,
-            clipBehavior: Clip.antiAliasWithSaveLayer,
-            child: Row(
-              children: [
-                Expanded(
-                  flex: 2,
-                  child: Center(
-                    child: Text(data.title,
-                        style: GoogleFonts.aBeeZee(
-                            color: Colors.orange[900],
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis),
-                  ),
-                ),
-                Expanded(
-                  child: Image.asset(data.image, height: 100, fit: BoxFit.fill),
-                ),
-                SizedBox(width: 10),
-              ],
-            )),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Expanded(
+            child: Container(
+              padding: const EdgeInsets.all(kDefaultPaddin),
+              // For  demo we use fixed height  and width
+              // Now we dont need them
+              // height: 180,
+              // width: 160,
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 208, 217, 223),
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Hero(
+                tag: "",
+                child: Image.asset(data.image),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin / 4),
+            child: Text(
+              // products is out demo list
+              data.title,
+              style: const TextStyle(color: kTextLightColor),
+            ),
+          ),
+          
+        ],
       ),
     );
   }

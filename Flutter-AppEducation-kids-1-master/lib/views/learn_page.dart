@@ -7,8 +7,14 @@ class PageLearning extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.builder(
+      body: GridView.builder(
         itemCount: ControllerLearn.dataLength,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 20,
+                  crossAxisSpacing: 20,
+                  childAspectRatio: 0.75,
+                ),
         itemBuilder: (context, index) {
           ModelLearn edu = ControllerLearn.dataLearn.elementAt(index);
           return CardLearn(
