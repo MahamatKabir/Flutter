@@ -20,12 +20,12 @@ class ControllerLearn {
     ),
     ModelLearn(
       title: 'Learn Numbers',
-      image: 'assets/images/numbers.jpg',
+      image: 'assets/images/sayi.png',
       page: NumberScreen(),
     ),
     ModelLearn(
       title: 'Learn Colors',
-      image: 'assets/images/colors.jpeg',
+      image: 'assets/images/rengler.png',
       page: ColorsScreen(),
     ),
     ModelLearn(

@@ -1,6 +1,10 @@
 import 'dart:async';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:kids_learning/provider/google_sign_in.dart';
+import 'package:provider/provider.dart';
 import 'package:rxdart/rxdart.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../sidebar/menu_item.dart';
 
 class SideBar extends StatefulWidget {
@@ -8,7 +12,8 @@ class SideBar extends StatefulWidget {
   _SideBarState createState() => _SideBarState();
 }
 
-class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<SideBar> {
+class _SideBarState extends State<SideBar>
+    with SingleTickerProviderStateMixin<SideBar> {
   late AnimationController _animationController;
   late StreamController<bool> isSidebarOpenedStreamController;
   late Stream<bool> isSidebarOpenedStream;
@@ -18,7 +23,8 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
   @override
   void initState() {
     super.initState();
-    _animationController = AnimationController(vsync: this, duration: _animationDuration);
+    _animationController =
+        AnimationController(vsync: this, duration: _animationDuration);
     isSidebarOpenedStreamController = PublishSubject<bool>();
     isSidebarOpenedStream = isSidebarOpenedStreamController.stream;
     isSidebarOpenedSink = isSidebarOpenedStreamController.sink;
@@ -47,6 +53,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
 
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser!;
     final screenWidth = MediaQuery.of(context).size.width;
 
     return StreamBuilder<bool>(
@@ -72,21 +79,21 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                       ),
                       ListTile(
                         title: Text(
-                          "Prateek",
-                          style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.w800),
+                          'Name: ' + user.displayName!,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w800),
                         ),
                         subtitle: Text(
-                          "www.techieblossom.com",
+                          'Email: ' + user.email!,
                           style: TextStyle(
                             color: Color(0xFF1BB5FD),
-                            fontSize: 18,
+                            fontSize: 10,
                           ),
                         ),
                         leading: CircleAvatar(
-                          child: Icon(
-                            Icons.perm_identity,
-                            color: Colors.white,
-                          ),
+                          backgroundImage: NetworkImage(user.photoURL!),
                           radius: 40,
                         ),
                       ),
@@ -100,29 +107,22 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                       MenuItem(
                         icon: Icons.home,
                         title: "Home",
-                        onTap: () {
-                         
-                        },
+                        onTap: () {},
                       ),
                       MenuItem(
                         icon: Icons.person,
                         title: "My Account",
-                        onTap: () {
-                         
-                        },
+                        onTap: () {},
                       ),
                       MenuItem(
                         icon: Icons.shopping_basket,
                         title: "My Orders",
-                        onTap: () {
-                         
-                        },
+                        onTap: () {},
                       ),
                       MenuItem(
-                        icon: Icons.card_giftcard,
-                        title: "Wishlist",
-                        onTap: () {}
-                      ),
+                          icon: Icons.card_giftcard,
+                          title: "Wishlist",
+                          onTap: () {}),
                       Divider(
                         height: 64,
                         thickness: 0.5,
@@ -135,10 +135,31 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                         title: "Settings",
                         onTap: () {},
                       ),
-                      MenuItem(
-                        icon: Icons.exit_to_app,
-                        title: "Logout",
-                        onTap: () {},
+                      Positioned(
+                        bottom: 100.0,
+                        left: 50.0,
+                        right: 50.0,
+                        child: Stack(
+                          children: <Widget>[
+                            Spacer(),
+                            ElevatedButton.icon(
+                              style: ElevatedButton.styleFrom(
+                                primary: Color.fromARGB(255, 255, 255, 255),
+                                onPrimary: Color.fromARGB(255, 11, 5, 5),
+                                minimumSize: Size(double.infinity, 50),
+                              ),
+                              icon: FaIcon(FontAwesomeIcons.google,
+                                  color: Color.fromARGB(255, 255, 255, 255)),
+                              label: Text('logOut'),
+                              onPressed: () {
+                                final provider =
+                                    Provider.of<GoogleSignInProvider>(context,
+                                        listen: false);
+                                provider.logout();
+                              },
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),

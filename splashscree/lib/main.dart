@@ -31,6 +31,8 @@ class _MyAppState extends State<MyApp> {
       locale = locale;
     });
   }
+
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {

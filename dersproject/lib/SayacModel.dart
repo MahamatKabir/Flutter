@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 
-part 'SayacModel.g.dart';
+//part 'SayacModel.g.dart';
 
-class SayacModel = Sayacmodel with _$SayacModel;
+//class SayacModel = Sayacmodel with _$SayacModel;
 
 abstract class Sayacmodel with Store{
   @observable
