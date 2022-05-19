@@ -1,11 +1,15 @@
 import 'dart:async';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:kids_learning/provider/google_sign_in.dart';
 import 'package:provider/provider.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../animation/user_model.dart';
 import '../sidebar/menu_item.dart';
+import 'package:kids_learning/bigsidbar/animation/social_page.dart';
+
 
 class SideBar extends StatefulWidget {
   @override
@@ -14,6 +18,9 @@ class SideBar extends StatefulWidget {
 
 class _SideBarState extends State<SideBar>
     with SingleTickerProviderStateMixin<SideBar> {
+  User? user = FirebaseAuth.instance.currentUser;
+  UserModel loggedInUser = UserModel();
+
   late AnimationController _animationController;
   late StreamController<bool> isSidebarOpenedStreamController;
   late Stream<bool> isSidebarOpenedStream;
@@ -23,6 +30,14 @@ class _SideBarState extends State<SideBar>
   @override
   void initState() {
     super.initState();
+    FirebaseFirestore.instance
+        .collection("users")
+        .doc(user!.uid)
+        .get()
+        .then((value) {
+      this.loggedInUser = UserModel.fromMap(value.data());
+      setState(() {});
+    });
     _animationController =
         AnimationController(vsync: this, duration: _animationDuration);
     isSidebarOpenedStreamController = PublishSubject<bool>();
@@ -53,7 +68,7 @@ class _SideBarState extends State<SideBar>
 
   @override
   Widget build(BuildContext context) {
-    final user = FirebaseAuth.instance.currentUser!;
+    //final user = FirebaseAuth.instance.currentUser!;
     final screenWidth = MediaQuery.of(context).size.width;
 
     return StreamBuilder<bool>(
@@ -79,21 +94,18 @@ class _SideBarState extends State<SideBar>
                       ),
                       ListTile(
                         title: Text(
-                          'Name: ' + user.displayName!,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w800),
-                        ),
-                        subtitle: Text(
-                          'Email: ' + user.email!,
-                          style: TextStyle(
-                            color: Color(0xFF1BB5FD),
-                            fontSize: 10,
-                          ),
-                        ),
+                            "${loggedInUser.firstName} ${loggedInUser.secondName}",
+                            style: TextStyle(
+                              color: Colors.black54,
+                              fontWeight: FontWeight.w500,
+                            )),
+                        subtitle: Text("${loggedInUser.email}",
+                            style: TextStyle(
+                              color: Colors.black54,
+                              fontWeight: FontWeight.w500,
+                            )),
                         leading: CircleAvatar(
-                          backgroundImage: NetworkImage(user.photoURL!),
+                          //backgroundImage: NetworkImage(user.photoURL!),
                           radius: 40,
                         ),
                       ),
@@ -150,8 +162,9 @@ class _SideBarState extends State<SideBar>
                               ),
                               icon: FaIcon(FontAwesomeIcons.google,
                                   color: Color.fromARGB(255, 255, 255, 255)),
-                              label: Text('logOut'),
+                              label: Text('logout'),
                               onPressed: () {
+                                logout(context);
                                 final provider =
                                     Provider.of<GoogleSignInProvider>(context,
                                         listen: false);
@@ -193,6 +206,12 @@ class _SideBarState extends State<SideBar>
         );
       },
     );
+  }
+  // the logout function
+  Future<void> logout(BuildContext context) async {
+    await FirebaseAuth.instance.signOut();
+    Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => SocialPage()));
   }
 }
 

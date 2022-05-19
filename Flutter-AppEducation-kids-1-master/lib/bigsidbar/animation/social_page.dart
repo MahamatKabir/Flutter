@@ -5,6 +5,8 @@ import '../sidebar/sidebar_layout.dart';
 import 'delayed_animation.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'login_page.dart';
+
 class SocialPage extends StatefulWidget {
   SocialPage({Key? key}) : super(key: key);
 
@@ -53,7 +55,12 @@ class _SocialPageState extends State<SocialPage> {
                   child: Column(
                     children: [
                       ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (_) => LoginPage()),
+                            );
+                          },
                           style: ElevatedButton.styleFrom(
                             shape: StadiumBorder(),
                             primary: kRedColor,
@@ -79,7 +86,8 @@ class _SocialPageState extends State<SocialPage> {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (_) => SideBarLayout()),
+                              MaterialPageRoute(
+                                  builder: (_) => SideBarLayout()),
                             );
                           },
                           style: ElevatedButton.styleFrom(
