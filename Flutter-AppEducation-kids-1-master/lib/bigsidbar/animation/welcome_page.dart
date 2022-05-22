@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:kids_learning/bigsidbar/animation/social_page.dart';
 import 'delayed_animation.dart';
 
+
 class WelcomePage extends StatelessWidget {
 
   @override
@@ -22,11 +23,12 @@ class WelcomePage extends StatelessWidget {
                 child: Container(
                   height:170,
                   child: Text(
-                    "Bir dil Öğren Dünya ile Tanish",
+                    "KALAM",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
-                     color: Colors.grey,
-                     fontSize: 16,
+                     color: Colors.white,
+                     fontWeight: FontWeight.bold,
+                     fontSize: 50,
                     ),
                   ),
                 )
@@ -58,7 +60,7 @@ class WelcomePage extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
                      color: Colors.grey,
-                     fontSize: 16,
+                     fontSize: 18,
                     ),
                   ),
                 ),

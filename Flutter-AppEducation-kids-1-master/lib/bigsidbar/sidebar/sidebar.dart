@@ -18,7 +18,7 @@ class SideBar extends StatefulWidget {
 
 class _SideBarState extends State<SideBar>
     with SingleTickerProviderStateMixin<SideBar> {
-  User? user = FirebaseAuth.instance.currentUser;
+  User? user = FirebaseAuth.instance.currentUser!;
   UserModel loggedInUser = UserModel();
 
   late AnimationController _animationController;
@@ -68,7 +68,7 @@ class _SideBarState extends State<SideBar>
 
   @override
   Widget build(BuildContext context) {
-    //final user = FirebaseAuth.instance.currentUser!;
+    //User? user = FirebaseAuth.instance.currentUser!;
     final screenWidth = MediaQuery.of(context).size.width;
 
     return StreamBuilder<bool>(
@@ -77,10 +77,10 @@ class _SideBarState extends State<SideBar>
       builder: (context, isSideBarOpenedAsync) {
         return AnimatedPositioned(
           duration: _animationDuration,
-          top: 0,
+          top: -30,
           bottom: 0,
-          left: isSideBarOpenedAsync.data! ? 0 : -screenWidth,
-          right: isSideBarOpenedAsync.data! ? 0 : screenWidth - 45,
+          left: isSideBarOpenedAsync.data! ? 0 : -screenWidth ,
+          right: isSideBarOpenedAsync.data! ? 0 : screenWidth - 50,
           child: Row(
             children: <Widget>[
               Expanded(
@@ -92,23 +92,23 @@ class _SideBarState extends State<SideBar>
                       SizedBox(
                         height: 100,
                       ),
-                      ListTile(
-                        title: Text(
+                      
+                      Text(
                             "${loggedInUser.firstName} ${loggedInUser.secondName}",
                             style: TextStyle(
                               color: Colors.black54,
                               fontWeight: FontWeight.w500,
                             )),
-                        subtitle: Text("${loggedInUser.email}",
+                      Text("${loggedInUser.email}",
                             style: TextStyle(
                               color: Colors.black54,
                               fontWeight: FontWeight.w500,
                             )),
-                        leading: CircleAvatar(
+                     CircleAvatar(
                           //backgroundImage: NetworkImage(user.photoURL!),
                           radius: 40,
                         ),
-                      ),
+                      
                       Divider(
                         height: 50,
                         thickness: 0.5,
@@ -188,7 +188,7 @@ class _SideBarState extends State<SideBar>
                     clipper: CustomMenuClipper(),
                     child: Container(
                       width: 35,
-                      height: 90,
+                      height: 100,
                       color: Color(0xFF262AAA),
                       alignment: Alignment.centerLeft,
                       child: AnimatedIcon(
@@ -219,7 +219,7 @@ class CustomMenuClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     Paint paint = Paint();
-    paint.color = Colors.white;
+    paint.color = Color.fromARGB(255, 255, 255, 255);
 
     final width = size.width;
     final height = size.height;

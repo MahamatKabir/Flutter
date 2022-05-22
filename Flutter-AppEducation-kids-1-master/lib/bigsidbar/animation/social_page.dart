@@ -4,7 +4,6 @@ import '../../constants.dart';
 import '../sidebar/sidebar_layout.dart';
 import 'delayed_animation.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'login_page.dart';
 
 class SocialPage extends StatefulWidget {
