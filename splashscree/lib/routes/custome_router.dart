@@ -11,7 +11,7 @@ class CustomRouter {
     
     switch (settings.name) {
       case homeRoute:
-      return MaterialPageRoute(builder: (context) => HomePage());
+      return MaterialPageRoute(builder: (context) =>const HomePage());
       case aboutRoute:
       return MaterialPageRoute(builder: (context) => AboutPage());
       case settingsRoute:

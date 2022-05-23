@@ -8,6 +8,8 @@ import 'package:splashscree/routes/route_names.dart';
  
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  
   runApp(const MyApp());
 }
 

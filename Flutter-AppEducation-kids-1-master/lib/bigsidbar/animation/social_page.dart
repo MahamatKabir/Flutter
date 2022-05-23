@@ -83,11 +83,7 @@ class _SocialPageState extends State<SocialPage> {
                       SizedBox(height: 20),
                       ElevatedButton(
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (_) => SideBarLayout()),
-                            );
+                           
                           },
                           style: ElevatedButton.styleFrom(
                             shape: StadiumBorder(),

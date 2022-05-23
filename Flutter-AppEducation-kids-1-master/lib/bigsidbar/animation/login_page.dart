@@ -5,6 +5,7 @@ import '../sidebar/sidebar_layout.dart';
 import 'delayed_animation.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'forgot_password.dart';
 import 'registration_screen.dart';
 import 'package:kids_learning/bigsidbar/animation/social_page.dart';
 
@@ -26,7 +27,6 @@ class _LoginPageState extends State<LoginPage> {
 
   // string for displaying the error Message
   String? errorMessage;
-
 
   @override
   Widget build(BuildContext context) {
@@ -61,14 +61,14 @@ class _LoginPageState extends State<LoginPage> {
       autofocus: false,
       controller: passwordController,
       obscureText: true,
-      validator: (value) { 
-          RegExp regex = new RegExp(r'^.{6,}$');
-          if (value!.isEmpty) {
-            return ("Password is required for login");
-          }
-          if (!regex.hasMatch(value)) {
-            return ("Enter Valid Password(Min. 6 Character)");
-          }
+      validator: (value) {
+        RegExp regex = new RegExp(r'^.{6,}$');
+        if (value!.isEmpty) {
+          return ("Password is required for login");
+        }
+        if (!regex.hasMatch(value)) {
+          return ("Enter Valid Password(Min. 6 Character)");
+        }
       },
       onSaved: (value) {
         passwordController.text = value!;
@@ -117,7 +117,6 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             SizedBox(height: 30),
-            
             DelayedAnimation(
               delay: 2000,
               child: Container(
@@ -130,29 +129,44 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox(height: 10),
                         passwordField,
                         SizedBox(height: 20),
+                        TextButton(
+                          onPressed: () => {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ForgotPassword(),
+                              ),
+                            )
+                          },
+                          child: Text(
+                            'Forgot Password ?',
+                            style: TextStyle(fontSize: 14.0),
+                          ),
+                        ),
                         ElevatedButton(
-                            onPressed: () {
-                               signIn(emailController.text, passwordController.text);
-                            },
-                            style: ElevatedButton.styleFrom(
-                              shape: StadiumBorder(),
-                              primary: kTextColor,
-                              padding: EdgeInsets.all(13),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                SizedBox(width: 10),
-                                Text(
-                                  'LOGIN',
-                                  style: GoogleFonts.poppins(
-                                    color: Color.fromARGB(255, 255, 255, 255),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                          onPressed: () {
+                            signIn(
+                                emailController.text, passwordController.text);
+                          },
+                          style: ElevatedButton.styleFrom(
+                            shape: StadiumBorder(),
+                            primary: kTextColor,
+                            padding: EdgeInsets.all(13),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(width: 10),
+                              Text(
+                                'LOGIN',
+                                style: GoogleFonts.poppins(
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
+                          ),
                         ),
                         SizedBox(height: 20),
                         Row(
@@ -183,8 +197,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-
- // login function
+  // login function
   void signIn(String email, String password) async {
     if (_formKey.currentState!.validate()) {
       try {
@@ -224,5 +237,3 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 }
-
-
