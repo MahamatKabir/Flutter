@@ -24,8 +24,8 @@ class _AlphabetScreenState extends State<AlphabetScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.orange[100],
-      appBar: AppBarSimple(
-        title: 'الحروف',
+      appBar: AppBar(
+        title: Text('harfa'),
       ),
       body: SingleChildScrollView(
           child: Padding(

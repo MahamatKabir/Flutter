@@ -23,9 +23,9 @@ class _AnimalScreenState extends State<AnimalScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.orange[100],
-        appBar: AppBarSimple(
-          title: 'الحيونات',
-        ),
+        appBar: AppBar(
+        title: Text('Animals'),
+      ),
         body: SafeArea(
           child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -46,9 +46,9 @@ class _AnimalScreenState extends State<AnimalScreen> {
                         onpressedBtn3: () => onClick(
                             newImage: PathImageAnimal.lionIm,
                             newAudio: PathAudioAnimal.lion),
-                        title1: 'كلب',
-                        title2: 'قطة',
-                        title3: 'أسد',
+                        title1: 'Dog',
+                        title2: 'Cat',
+                        title3: 'Lion',
                         btnColor2: Colors.pink,
                       ),
                       SizedBox(
@@ -64,9 +64,9 @@ class _AnimalScreenState extends State<AnimalScreen> {
                         onpressedBtn3: () => onClick(
                             newImage: PathImageAnimal.wolfIm,
                             newAudio: PathAudioAnimal.wolf),
-                        title1: 'فيل',
-                        title2: 'ماعز',
-                        title3: 'ذئب',
+                        title1: 'Elephant',
+                        title2: 'Goat',
+                        title3: 'Wolf',
                         btnColor2: Colors.pink,
                       ),
                       SizedBox(height: 2),
@@ -80,9 +80,9 @@ class _AnimalScreenState extends State<AnimalScreen> {
                         onpressedBtn3: () => onClick(
                             newImage: PathImageAnimal.parrotIm,
                             newAudio: PathAudioAnimal.parrot),
-                        title1: 'حصان',
-                        title2: 'دجاجة',
-                        title3: 'ببغاء',
+                        title1: 'Horse',
+                        title2: 'Chicken',
+                        title3: 'Parrot',
                         btnColor2: Colors.pink,
                       ),
                     ],

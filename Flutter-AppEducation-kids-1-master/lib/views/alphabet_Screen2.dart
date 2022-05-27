@@ -23,8 +23,8 @@ class _AlphabetScreen1State extends State<AlphabetScreen1> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.orange[100],
-      appBar: AppBarSimple(
-        title: 'Alphabet',
+     appBar: AppBar(
+        title: Text('Alphabe'),
       ),
       body: SingleChildScrollView(
           child: Padding(

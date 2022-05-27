@@ -22,8 +22,8 @@ class _NumberScreenState extends State<NumberScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.orange[100],
-      appBar: AppBarSimple(
-        title: 'Numbers',
+    appBar: AppBar(
+        title: Text('Numbers'),
       ),
       body: SafeArea(
           child: Padding(

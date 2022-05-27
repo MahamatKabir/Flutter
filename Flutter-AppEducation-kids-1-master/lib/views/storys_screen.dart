@@ -8,8 +8,8 @@ class Story1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarSimple(
-        title: 'الإسراء و المعراج',
+     appBar: AppBar(
+        title: Text('harfa'),
       ),
       body: ListView.builder(
         itemCount: ControllerScreenStory1.dataLength,
@@ -29,8 +29,8 @@ class Story2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarSimple(
-        title: 'مولد الحبيب',
+      appBar: AppBar(
+        title: Text('harfa'),
       ),
       body: ListView.builder(
         itemCount: ControllerScreenStory2.dataLength,
@@ -50,8 +50,8 @@ class Story3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarSimple(
-        title: 'أركان الإسلام',
+      appBar: AppBar(
+        title: Text('harfa'),
       ),
       body: ListView.builder(
         itemCount: ControllerScreenStory3.dataLength,
@@ -71,8 +71,8 @@ class Story4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarSimple(
-        title: 'مفتاح التفوق',
+     appBar: AppBar(
+        title: Text('harfa'),
       ),
       body: Container(
         child: Image.network(
@@ -90,8 +90,8 @@ class Story5 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarSimple(
-        title: 'محمد نبينا',
+     appBar: AppBar(
+        title: Text('harfa'),
       ),
       body: Container(
         child: Image.asset(
@@ -109,8 +109,8 @@ class Story6 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarSimple(
-        title: 'قصة الأذان',
+     appBar: AppBar(
+        title: Text('harfa'),
       ),
       body: Container(
         child: Image.asset(
@@ -128,8 +128,8 @@ class Story7 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarSimple(
-        title: 'قصة النحلة و الفراشة',
+     appBar: AppBar(
+        title: Text('harfa'),
       ),
       body: Container(
         child: Image.asset(

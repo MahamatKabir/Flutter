@@ -73,7 +73,8 @@ class _HomePageState extends State<HomePage> {
                         lang.name , 
                         style: TextStyle(fontSize: 20))],
                   ),
-              ))
+              )
+             )
               .toList(),
             ),
           )

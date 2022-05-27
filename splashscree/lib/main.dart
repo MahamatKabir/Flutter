@@ -26,7 +26,7 @@ static void setLocale(BuildContext context, Locale locale) {
 
 
 class _MyAppState extends State<MyApp> {
-    late Locale locale;
+      Locale? _locale;
 
   void setLocale(Locale locale) {
     setState(() {
@@ -55,7 +55,7 @@ class _MyAppState extends State<MyApp> {
           
           nextScreen: const HomePage(),
       ),
-      locale: locale,
+      locale: _locale,
       supportedLocales: const [
         Locale('tr','TR'),
         Locale('en','US'),

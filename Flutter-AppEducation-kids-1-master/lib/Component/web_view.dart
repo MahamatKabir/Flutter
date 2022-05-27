@@ -29,9 +29,9 @@ class _AppWebViewState extends State<AppWebView> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBarSimple(
-          title: widget.title,
-        ),
+        appBar: AppBar(
+        title: Text('harfa'),
+      ),
         body: SafeArea(
           child: WebView(
             initialUrl: widget.url,

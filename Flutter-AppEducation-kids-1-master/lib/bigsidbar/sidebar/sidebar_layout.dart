@@ -11,7 +11,7 @@ class SideBarLayout extends StatelessWidget {
       child: Stack(
           children: [      
             HomePage(),
-            SideBar(),
+            SideBar()
           ]
         )
     );

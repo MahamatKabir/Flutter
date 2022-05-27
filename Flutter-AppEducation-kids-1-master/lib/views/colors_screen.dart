@@ -22,14 +22,15 @@ class _ColorsScreenState extends State<ColorsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.orange[100],
-      appBar: AppBarSimple(
-        title: 'Colors',
+     appBar: AppBar(
+        title: Text('Colors'),
       ),
       body: SingleChildScrollView(
           child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(children: [
           ScreenRowColor(
+            
             onpressedBtn1: () => onClick(newAudio: PathAudioColors.purple),
             onpressedBtn2: () => onClick(newAudio: PathAudioColors.red),
             btnColor1: Colors.purple,
@@ -63,6 +64,7 @@ class _ColorsScreenState extends State<ColorsScreen> {
               height: 120,
               width: 120,
             ),
+            
           ),
           SizedBox(
             height: 5,

@@ -24,6 +24,9 @@ dependencies:
   provider: ^6.0.2
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  shared_preferences: ^2.0.15
   google_fonts: ^2.1.0
   webview_flutter: ^2.0.12
   flutter_svg: ^1.0.3
@@ -49,3 +52,7 @@ flutter:
     - assets/images/
     - assets/audios/
     - assets/logo/rocket.png
+    - lib/localization/lang/en.json
+    - lib/localization/lang/ar.json
+    - lib/localization/lang/tr.json
+    - lib/localization/lang/fr.json
