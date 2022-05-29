@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:kalamna/constants.dart';
 import 'package:kalamna/screens/welcome_screen.dart';
 
+import 'screens/findword/Findcolor_screen.dart';
+
 PageController pageController = PageController(initialPage: 0);
 int currentIndex = 0;
 void main() {

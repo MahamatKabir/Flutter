@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kalamna/constants.dart';
 import 'package:kalamna/models/Product.dart';
 import 'package:kalamna/screens/details/components/pushable_button.dart';
+import 'package:kalamna/screens/findword/Findcolor_screen.dart';
 import 'package:kalamna/screens/quiz/quiz_screen.dart';
 
 class Body extends StatelessWidget {
@@ -43,14 +44,22 @@ class Body extends StatelessWidget {
                 ),
                 margin: const EdgeInsets.all(8),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                      Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => 
+                     product.page
+                    ),
+                  );
+                    
+                  },
                   splashColor: Colors.deepPurple,
                   child: Center(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: const [
                         Image(
-                            image: AssetImage('assets/shapes/circle.jpg'),
+                            image: AssetImage('assets/images/learne.jpg'),
                             width: 100),
                       ],
                     ),
@@ -63,14 +72,21 @@ class Body extends StatelessWidget {
                 ),
                 margin: const EdgeInsets.all(8.0),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => 
+                     product.page
+                    ),
+                  );
+                  },
                   splashColor: Colors.deepPurple,
                   child: Center(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: const [
                         Image(
-                            image: AssetImage('assets/shapes/circle.jpg'),
+                            image: AssetImage('assets/images/writing.jpg'),
                             width: 100),
                       ],
                     ),
@@ -83,14 +99,21 @@ class Body extends StatelessWidget {
                 ),
                 margin: const EdgeInsets.all(8.0),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                      Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => 
+                     product.page
+                    ),
+                  );
+                  },
                   splashColor: Colors.deepPurple,
                   child: Center(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: const [
                         Image(
-                            image: AssetImage('assets/shapes/circle.jpg'),
+                            image: AssetImage('assets/images/learne.jpg'),
                             width: 100),
                       ],
                     ),
@@ -103,13 +126,21 @@ class Body extends StatelessWidget {
                 ),
                 margin: const EdgeInsets.all(8.0),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                      Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => 
+                     FindcolorScreen()
+                    ),
+                  );
+                  },
                   splashColor: Colors.deepPurple,
                   child: Center(
                     child: Column(
+                       mainAxisSize: MainAxisSize.min,
                       children: const [
                         Image(
-                            image: AssetImage('assets/shapes/circle.jpg'),
+                            image: AssetImage('assets/images/writing.jpg'),
                             width: 100),
                       ],
                     ),
