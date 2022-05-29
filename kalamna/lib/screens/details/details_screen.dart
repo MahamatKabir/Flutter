@@ -20,7 +20,7 @@ class DetailsScreen extends StatelessWidget {
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.blue,
+      backgroundColor: Color.fromARGB(255, 11, 7, 133),
       elevation: 0,
       leading: IconButton(
         icon: SvgPicture.asset(

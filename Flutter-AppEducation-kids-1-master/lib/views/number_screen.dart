@@ -1,6 +1,5 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import '/Component/appBar.dart';
 import '/Component/card_screens.dart';
 import '../Controller/c_screenl.dart';
 

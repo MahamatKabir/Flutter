@@ -9,11 +9,13 @@ import 'sidebar.dart';
 class SideBarLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        HomeScreen(),
-        SideBar(),
-      ] 
+    return Card(
+      child: Stack(
+        children: [
+          HomeScreen(),
+          SideBar(),
+        ] 
+      ),
     );
   }
 }

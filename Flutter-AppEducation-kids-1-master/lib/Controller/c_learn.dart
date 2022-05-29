@@ -6,13 +6,16 @@ import 'package:kids_learning/views/alphabet_Screen2.dart';
 import 'package:kids_learning/views/colors_screen.dart';
 import 'package:kids_learning/views/number_screen.dart';
 
+import '../views/body_parts_info.dart';
+import '../views/shape_info.dart';
+
 class ControllerLearn {
   static List<ModelLearn> _dataLearn = [
-    ModelLearn(
-      image: 'assets/images/arabica.png',
-      title: 'تعلم الحروف',
-      page: AlphabetScreen(),
-    ),
+    // ModelLearn(
+    //   image: 'assets/images/arabica.png',
+    //   title: 'تعلم الحروف',
+    //   page: AlphabetScreen(),
+    // ),
     ModelLearn(
       title: 'Learn Alphabet',
       image: 'assets/images/alphabet.png',
@@ -29,19 +32,19 @@ class ControllerLearn {
       page: ColorsScreen(),
     ),
     ModelLearn(
-      title: 'حيوانات',
-      image: 'assets/images/animals.jpg',
+      title: 'Learn Animal',
+      image: 'assets/images/hayvan.png',
       page: AnimalScreen(),
     ),
      ModelLearn(
-      title: 'حيوانات',
-      image: 'assets/images/animals.jpg',
-      page: AnimalScreen(),
+      title: 'Shapes',
+      image: 'assets/images/sekil.png',
+      page: ShapesPage(),
     ),
      ModelLearn(
-      title: 'حيوانات',
+      title: 'Body Parts',
       image: 'assets/images/animals.jpg',
-      page: AnimalScreen(),
+      page: BodyPartsPage(),
     ),
   ];
 

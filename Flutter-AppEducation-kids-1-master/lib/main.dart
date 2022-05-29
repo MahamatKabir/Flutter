@@ -69,7 +69,7 @@ class _MyAppState extends State<MyApp> {
           duration: 500,
           splashTransition: SplashTransition.rotationTransition,
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
-          nextScreen: WelcomePage(),
+          nextScreen: SideBarLayout(),
         ),
        //set Localizations
        locale: _locale,
