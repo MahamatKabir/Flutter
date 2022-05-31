@@ -3,7 +3,7 @@ import 'package:kalamna/constants.dart';
 import 'package:kalamna/models/Product.dart';
 import 'package:kalamna/screens/details/components/pushable_button.dart';
 import 'package:kalamna/screens/findword/Findcolor_screen.dart';
-import 'package:kalamna/screens/quiz/quiz_screen.dart';
+
 
 class Body extends StatelessWidget {
   final Product product;
@@ -103,7 +103,7 @@ class Body extends StatelessWidget {
                       Navigator.push(
                     context,
                     MaterialPageRoute(builder: (_) => 
-                     product.page
+                     product.drop
                     ),
                   );
                   },
@@ -113,7 +113,7 @@ class Body extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: const [
                         Image(
-                            image: AssetImage('assets/images/learne.jpg'),
+                            image: AssetImage('assets/images/Drag.png'),
                             width: 100),
                       ],
                     ),

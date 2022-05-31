@@ -49,7 +49,6 @@ class Body extends StatelessWidget {
             ),
           ),
         ),
-        CustomBottomNavigationBar(),
       ],
       
     );
