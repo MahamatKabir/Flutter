@@ -19,12 +19,12 @@ class _AlphabetDropState extends State<AlphabetDrop> {
     gameOver = false;
     score = 0;
     items = [
-      ItemModel(value: 'a', name: 'a', img: 'assets/images/lion.jpg'),
-      ItemModel(value: 'b', name: 'b', img: 'assets/images/dog.jpg'),
-      ItemModel(value: 'c', name: 'c', img: 'assets/images/cat.jpg'),
-      ItemModel(value: 'd', name: 'd', img: 'assets/images/alphant.jpg'),
-      ItemModel(value: 'e', name: 'e', img: 'assets/images/goat.jpg'),
-      ItemModel(value: 'f', name: 'f', img: 'assets/images/Wolf.jpeg'),
+      ItemModel(value: 'a', name: 'a', img: 'assets/images/a1.png'),
+      ItemModel(value: 'b', name: 'b', img: 'assets/images/b1.png'),
+      ItemModel(value: 'c', name: 'c', img: 'assets/images/c1.png'),
+      ItemModel(value: 'd', name: 'd', img: 'assets/images/d1.png'),
+      ItemModel(value: 'e', name: 'e', img: 'assets/images/e1.png'),
+      ItemModel(value: 'f', name: 'f', img: 'assets/images/w1.png'),
     ];
     items2 = List<ItemModel>.from(items);
     items.shuffle();

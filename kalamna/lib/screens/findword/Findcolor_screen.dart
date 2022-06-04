@@ -162,7 +162,7 @@ class _FindcolorScreenState extends State<FindcolorScreen> {
                     handleAnswers(quizLogic.getAnswer2());
                   },
                   child: Text(
-                      '${quizLogic.getAnswer1()}',
+                      '${quizLogic.getAnswer2()}',
                       style: const TextStyle(fontSize: 20.0),
                   ),
                    shape: RoundedRectangleBorder(

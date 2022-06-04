@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:kalamna/screens/details/details_screen.dart';
 import '../../../constants.dart';
 import '../../../models/Product.dart';
-import '../../../widgets/custom_bottom_navigation_bar.dart';
 import 'item_card.dart';
 
 class Body extends StatelessWidget {
- 
 
   @override
   Widget build(BuildContext context) {

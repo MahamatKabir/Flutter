@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:kalamna/constants.dart';
 import 'package:kalamna/models/Product.dart';
 import 'package:kalamna/screens/details/components/body.dart';
 

@@ -10,6 +10,7 @@ class NumberScreen extends StatefulWidget {
 }
 
 class _NumberScreenState extends State<NumberScreen> {
+   String imageView = 'assets/images/number1.jpg';
   AudioCache audioCache = AudioCache();
   AudioPlayer audioPlayer = AudioPlayer();
   @override
@@ -21,67 +22,80 @@ class _NumberScreenState extends State<NumberScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.orange[100],
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
     appBar: AppBar(
-        title: Text('Numbers'),
+        backgroundColor:Color.fromARGB(255, 11, 7, 133),
+        title: Text(
+          'Numbers',
+          style: const TextStyle(
+            color:Colors.white , fontWeight: FontWeight.bold)),
       ),
       body: SafeArea(
           child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
-                  Expanded(
-                    child: Container(
-                      margin: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage('assets/images/number1.jpg'),
-                              fit: BoxFit.fill),
-                          border: Border.all(color: Colors.orange, width: 5),
-                          borderRadius: BorderRadius.all(Radius.circular(20))),
-                    ),
-                  ),
+                  ShowImage(image: imageView),
+                  SizedBox(height: 2),
                   Expanded(
                     child: Column(children: [
                       ScreenRow(
                         onpressedBtn1: () =>
-                            onClick(newAudio: PathAudioNumber.num1),
+                            onClick(
+                              newImage: PathImageNumber.one,
+                              newAudio: PathAudioNumber.num1),
                         onpressedBtn2: () =>
-                            onClick(newAudio: PathAudioNumber.num2),
+                            onClick(
+                              newImage: PathImageNumber.two,
+                              newAudio: PathAudioNumber.num2),
                         onpressedBtn3: () =>
-                            onClick(newAudio: PathAudioNumber.num3),
-                        title1: '1',
-                        title2: '2',
-                        title3: '3',
-                        btnColor2: Colors.orange.shade400,
+                            onClick(
+                              newImage: PathImageNumber.tree,
+                              newAudio: PathAudioNumber.num3),
+                        title1: 'one',
+                        title2: 'two',
+                        title3: 'tree',
+                        btnColor2: Color.fromARGB(255, 11, 7, 133),
                       ),
                       SizedBox(
                         height: 2,
                       ),
                       ScreenRow(
                         onpressedBtn1: () =>
-                            onClick(newAudio: PathAudioNumber.num4),
+                            onClick(
+                              newImage: PathImageNumber.four,
+                              newAudio: PathAudioNumber.num4),
                         onpressedBtn2: () =>
-                            onClick(newAudio: PathAudioNumber.num5),
+                            onClick(
+                              newImage: PathImageNumber.five,
+                              newAudio: PathAudioNumber.num5),
                         onpressedBtn3: () =>
-                            onClick(newAudio: PathAudioNumber.num6),
-                        title1: '4',
-                        title2: '5',
-                        title3: '6',
-                        btnColor1: Colors.orange.shade400,
+                            onClick(
+                              newImage: PathImageNumber.six,
+                              newAudio: PathAudioNumber.num6),
+                        title1: 'four',
+                        title2: 'five',
+                        title3: 'six',
+                        btnColor1: Color.fromARGB(255, 11, 7, 133),
                       ),
                       SizedBox(height: 2),
                       ScreenRow(
                         onpressedBtn1: () =>
-                            onClick(newAudio: PathAudioNumber.num7),
+                            onClick(
+                              newImage: PathImageNumber.seven,
+                              newAudio: PathAudioNumber.num7),
                         onpressedBtn2: () =>
-                            onClick(newAudio: PathAudioNumber.num8),
+                            onClick(
+                              newImage: PathImageNumber.eight,
+                              newAudio: PathAudioNumber.num8),
                         onpressedBtn3: () =>
-                            onClick(newAudio: PathAudioNumber.num9),
-                        title1: '7',
-                        title2: '8',
-                        title3: '9',
-                        btnColor3: Colors.orange.shade400,
+                            onClick(
+                              newImage: PathImageNumber.nine,
+                              newAudio: PathAudioNumber.num9),
+                        title1: 'seven',
+                        title2: 'eight',
+                        title3: 'nine',
+                        btnColor3: Color.fromARGB(255, 11, 7, 133),
                       ),
                     ]),
                   )
@@ -90,7 +104,10 @@ class _NumberScreenState extends State<NumberScreen> {
     );
   }
 
-  void onClick({required String newAudio}) async {
+  void onClick({required String newImage,required String newAudio}) async {
+    setState(() {
+      imageView = newImage;
+    });
     audioPlayer.stop();
     audioPlayer = await audioCache.play(newAudio);
   }

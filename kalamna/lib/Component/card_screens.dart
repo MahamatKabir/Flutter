@@ -23,9 +23,9 @@ class ScreenRow extends StatelessWidget {
     required this.onpressedBtn1,
     required this.onpressedBtn2,
     required this.onpressedBtn3,
-    this.btnColor1 = Colors.deepOrangeAccent,
-    this.btnColor2 = Colors.orange,
-    this.btnColor3 = Colors.deepOrange,
+    this.btnColor1 = const Color.fromARGB(255, 11, 7, 133),
+    this.btnColor2 = const Color.fromARGB(255, 11, 7, 133),
+    this.btnColor3 = const Color.fromARGB(255, 11, 7, 133), 
   });
 
   @override
@@ -99,7 +99,7 @@ class ShowImage extends StatelessWidget {
       margin: EdgeInsets.all(10),
       decoration: BoxDecoration(
           image: DecorationImage(image: AssetImage(image), fit: BoxFit.fill),
-          border: Border.all(color: Colors.orange, width: 5),
+          border: Border.all(color: Color.fromARGB(255, 11, 7, 133), width: 5),
           borderRadius: BorderRadius.all(Radius.circular(15))),
     ));
   }

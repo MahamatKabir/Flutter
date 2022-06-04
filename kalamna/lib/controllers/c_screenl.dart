@@ -21,6 +21,17 @@ class PathImageAnimal {
   static String henIm = 'assets/images/hen.jpg';
   static String parrotIm = 'assets/images/parrot.jpeg';
 }
+class PathImageNumber {
+  static String one = 'assets/images/1.png';
+  static String two = 'assets/images/2.png';
+  static String tree = 'assets/images/3.png';
+  static String four = 'assets/images/4.png';
+  static String five = 'assets/images/5.png';
+  static String six = 'assets/images/6.png';
+  static String seven = 'assets/images/7.png';
+  static String eight= 'assets/images/8.png';
+  static String nine = 'assets/images/9.png';
+}
 
 class PathAudioNumber {
   static String num1 = 'audios/kid-1.mp3';
@@ -43,6 +54,19 @@ class PathAudioColors {
   static String pink = 'audios/pink.mp3';
   static String purple = 'audios/purple.mp3';
   static String red = 'audios/red.mp3';
+  static String white = 'audios/white.wav';
+
+}
+class PathImageColor {
+  static String black = 'assets/images/black.png';
+  static String green = 'assets/images/green.png';
+  static String orange = 'assets/images/orange.png';
+  static String red = 'assets/images/red.png';
+  static String brown = 'assets/images/brown.png';
+  static String blue = 'assets/images/blue.png';
+  static String pink = 'assets/images/pink.png';
+  static String purple = 'assets/images/purple.png';
+  static String white = 'assets/images/white.png';
 }
 
 class PathAudioAlphabet {

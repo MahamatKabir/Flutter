@@ -20,17 +20,14 @@ class CustomBottomNavigationBar extends StatelessWidget {
           color: Colors.white,
         ),
         Icon(
-          Icons.ondemand_video_rounded,
-          color: Colors.white,
-        ),
-        Icon(
           Icons.auto_stories,
           color: Colors.white,
         ),
-        Icon(
-          Icons.now_widgets,
+         Icon(
+          Icons.ondemand_video_rounded,
           color: Colors.white,
         ),
+       
       ],
       onTap: onClock,
     );

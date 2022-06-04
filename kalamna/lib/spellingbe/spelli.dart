@@ -1,0 +1,155 @@
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../controllers/controller.dart';
+import 'allWords.dart';
+import 'drag.dart';
+import 'drop.dart';
+import 'flyAnimation.dart';
+import 'progressBar.dart';
+
+class Spelli extends StatefulWidget {
+  @override
+  State<Spelli> createState() => _SpelliState();
+}
+
+class _SpelliState extends State<Spelli> {
+  final List<String> _words = allWords.toList();
+  late String _word;
+  late String _dropWord;
+  _generateWord() {
+    final r = Random().nextInt(_words.length);
+    _word = _words[r];
+    _dropWord = _word;
+    _words.removeAt(r);
+    final s = _word.characters.toList()..shuffle();
+    _word = s.join();
+    WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
+      Provider.of<Controller>(context, listen: false)
+          .setUp(total: _word.length);
+      Provider.of<Controller>(context, listen: false)
+          .requestWord(request: false);
+    });
+  }
+
+  _animationCompleted() {
+    Future.delayed(
+        const Duration(
+          milliseconds: 200,
+        ), () {
+      Provider.of<Controller>(context, listen: false)
+          .updateLetterDropped(dropped: false);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Selector<Controller, bool>(
+        selector: (_, controller) => controller.generateWord,
+        builder: (_, generate, __) {
+          if (generate) {
+            if (_words.isNotEmpty) {
+              _generateWord();
+            }
+          }
+          return SafeArea(
+            child: Stack(
+              children: [
+                Container(
+                  color: const Color.fromARGB(255, 11, 5, 75),
+                ),
+                Column(children: [
+                  const Expanded(
+                    flex: 1,
+                    child: SizedBox(),
+                  ),
+                  Expanded(
+                      flex: 3,
+                      child: SizedBox(
+                          child: Padding(
+                             padding: const EdgeInsets.all(12.0),
+                             child: Container(
+                             decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(60),
+                            ),
+                            child: Row(children: [
+                              Expanded(
+                                flex: 2,
+                                child: Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(18, 2, 2, 2),
+                                  child: FittedBox(
+                                    child: Text(
+                                      'Spelling Bee',
+                                      style:
+                                          Theme.of(context).textTheme.headline1?.copyWith(fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: Padding(
+                                    padding: const EdgeInsets.all(18.0),
+                                    child: Selector<Controller, bool>(
+                                      selector: (_, controller) =>
+                                          controller.letterDropped,
+                                      builder: (_, dropped, __) =>
+                                          FlyInAnimation(
+                                        removeScale: true,
+                                        animate: dropped,
+                                        animationCompleted:
+                                            _animationCompleted(),
+                                        child: Image.asset(
+                                            'assets/images/Bee.png'),
+                                      ),
+                                    )),
+                              )
+                            ])),
+                      ))),
+                  Expanded(
+                      flex: 4,
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: _dropWord.characters
+                              .map((e) => FlyInAnimation(
+                                  animate: true, 
+                                  child: Drop(letter: e)))
+                              .toList())),
+                  Expanded(
+                      flex: 4,
+                      child: FlyInAnimation(
+                          animate: true,
+                          child: Image.asset('assets/images/$_dropWord.jpg'))),
+                  Expanded(
+                    flex: 4,
+                    child: Row(
+                     
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: _word.characters
+                          .map(
+                            (e) => FlyInAnimation(
+                              animate: true,
+                              
+                              child: Drag(
+                                letter: e,
+                              ),
+                            ),
+                          )
+                          .toList(),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: ProgressBar(),
+                  ),
+                ]),
+              ],
+            ),
+          );
+        });
+  }
+}

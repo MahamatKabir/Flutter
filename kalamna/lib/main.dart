@@ -2,7 +2,10 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:kalamna/constants.dart';
+import 'package:kalamna/controllers/controller.dart';
 import 'package:kalamna/screens/welcome_screen.dart';
+import 'package:kalamna/spellingbe/spelli.dart';
+import 'package:provider/provider.dart';
 
 import 'localization/app_localization.dart';
 import 'localization/localization_constants.dart';
@@ -12,7 +15,9 @@ import 'screens/findword/Findcolor_screen.dart';
 void main() {
    WidgetsFlutterBinding.ensureInitialized();
   // ignore: prefer_const_constructors
-  runApp(MyApp());
+  runApp(ChangeNotifierProvider(
+    create:(_) => Controller(),
+    child: MyApp()));
 }
 
 class MyApp extends StatefulWidget {

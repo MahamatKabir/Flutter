@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:kalamna/constants.dart';
 import 'package:kalamna/models/Product.dart';
-import 'package:kalamna/screens/details/components/pushable_button.dart';
-import 'package:kalamna/screens/findword/Findcolor_screen.dart';
 
 
 class Body extends StatelessWidget {
   final Product product;
+   final bool? remov; 
 
-  const Body({Key? key, required this.product}) : super(key: key);
+  const Body({Key? key, required this.product, this.remov = false}) : super(key: key);
   bodyWidget(BuildContext context) => Stack(
         children: <Widget>[
           Align(
@@ -76,7 +74,7 @@ class Body extends StatelessWidget {
                     Navigator.push(
                     context,
                     MaterialPageRoute(builder: (_) => 
-                     product.page
+                     product.find
                     ),
                   );
                   },
@@ -86,13 +84,14 @@ class Body extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: const [
                         Image(
-                            image: AssetImage('assets/images/writing.jpg'),
+                            image: AssetImage('assets/images/find.jpeg'),
                             width: 100),
                       ],
                     ),
                   ),
                 ),
               ),
+            
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50),
@@ -120,6 +119,7 @@ class Body extends StatelessWidget {
                   ),
                 ),
               ),
+              if(product.id != 1)
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50),
@@ -130,7 +130,7 @@ class Body extends StatelessWidget {
                       Navigator.push(
                     context,
                     MaterialPageRoute(builder: (_) => 
-                     FindcolorScreen()
+                     product.spell
                     ),
                   );
                   },

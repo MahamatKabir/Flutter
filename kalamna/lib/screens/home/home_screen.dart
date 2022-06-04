@@ -8,6 +8,7 @@ import '../../localization/localization_constants.dart';
 import '../../main.dart';
 import '../../models/language.dart';
 import '../../widgets/custom_bottom_navigation_bar.dart';
+import '../videopage/Video_page.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -18,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
    int _indexPage = 0;
   List<Widget> _pages = [
     Body(),
-   // PageVideo(),
+    PageVideo(),
     //PageStory(),
     //PageApps()
   ];
@@ -32,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
       title: Text(
-        "Learn With Us",
+        getTranslated(context, "title_label"),
         style: GoogleFonts.elMessiri(
             fontStyle: FontStyle.italic,
             fontSize: 30,
