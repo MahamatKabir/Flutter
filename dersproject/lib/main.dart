@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flutter/material.dart';
-
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'model/transaction.dart';
 import 'page/transaction_page.dart';
 
@@ -19,12 +19,27 @@ class MyApp extends StatelessWidget {
   static final String title = 'To Do Hive';
   
   @override
-  Widget build(BuildContext context) => MaterialApp(
+   Widget build(BuildContext context) {
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title:title,
-      theme : ThemeData(primarySwatch: Colors.indigo),
-      home: TransactionPage(),
-  );
+      title: 'Flutter Demo',
+      theme: ThemeData(
+      primarySwatch: Colors.blue,
+      ),
+      home: AnimatedSplashScreen(
+        splash: Image.asset('assets/images/colorb.png',
+        height: 140.0,
+        width: 110.0,
+        fit: BoxFit.fitHeight,
+        ),
+          duration: 5000,
+          splashTransition: SplashTransition.scaleTransition,
+          backgroundColor: Colors.blue,
+          
+          nextScreen:  TransactionPage(),
+      ),
+    );
+  }
     
 }
 // class ItemsWidget extends StatefulWidget {

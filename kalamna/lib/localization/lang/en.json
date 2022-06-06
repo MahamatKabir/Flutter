@@ -1,3 +1,12 @@
 {
-    "title_label": "Learn With Us" 
+    "title_label": "English For Kids" ,
+    "product_title1" : "Alphabet",
+    "product_title2" : "Numbers",
+    "product_title3" : "Colors",
+    "product_title4" : "Shapes",
+    "product_title5" : "Animals",
+    "product_title6" : "Fruits",
+    "product_title7" : "Foods",
+    "product_title8" : "Sport"
+      
 }

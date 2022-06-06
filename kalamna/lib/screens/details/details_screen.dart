@@ -19,16 +19,17 @@ class DetailsScreen extends StatelessWidget {
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      backgroundColor: Color.fromARGB(255, 11, 7, 133),
+      backgroundColor: const Color.fromARGB(255, 11, 7, 133),
       elevation: 0,
       leading: IconButton(
         icon: SvgPicture.asset(
           'assets/icons/back.svg',
-          color: Color.fromARGB(255, 255, 255, 255),
+          color: const Color.fromARGB(255, 255, 255, 255),
         ),
         onPressed: () => Navigator.pop(context),
       ),
-      title: Text(product.title),
+     
+      
       centerTitle:true,
       
     );

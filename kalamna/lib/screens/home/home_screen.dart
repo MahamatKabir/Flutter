@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:kalamna/constants.dart';
+import 'package:kalamna/screens/delayed_animation.dart';
 import 'package:kalamna/screens/home/components/body.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -17,7 +18,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
    int _indexPage = 0;
-  List<Widget> _pages = [
+  final List<Widget> _pages = [
     Body(),
     PageVideo(),
     //PageStory(),
@@ -31,17 +32,27 @@ class _HomeScreenState extends State<HomeScreen> {
     }
       return Scaffold(
       appBar: AppBar(
-      backgroundColor: Color.fromARGB(255, 255, 255, 255),
+      backgroundColor:  Color.fromARGB(255, 49, 64, 165),
+       leading: IconButton(
+      
+        icon: SvgPicture.asset(
+          'assets/icons/back.svg',
+          color: Color.fromARGB(255, 255, 255, 255),
+        ),
+        onPressed: () => Navigator.pop(context),
+      ),
       title: Text(
-        getTranslated(context, "title_label"),
+        getTranslated(context,"title_label"),
         style: GoogleFonts.elMessiri(
             fontStyle: FontStyle.italic,
-            fontSize: 30,
+            fontSize: 20,
+            letterSpacing: 1.5,
+            fontWeight: FontWeight.bold,
             shadows: [
-              Shadow(
-                offset: Offset(1.5, 1.5),
-                color: Color.fromARGB(255, 45, 5, 176),
-                blurRadius: 3,
+              const Shadow(
+                offset: Offset(1, 1),
+                color: Color.fromARGB(255, 255, 255, 255),
+               
               )
             ]),
       ),
@@ -53,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
             underline: const SizedBox(),
             icon:const Icon(
               Icons.language,
-               color: Color.fromARGB(255, 49, 64, 165),
+               color: Color.fromARGB(255, 255, 255, 255),
               size: 40.0,
             ),
             onChanged:(language){
@@ -81,7 +92,13 @@ class _HomeScreenState extends State<HomeScreen> {
       ],
       //leading: Icon(Icons.menu, color: Colors.black),
     ),
-      body: _pages[_indexPage],
+      body: Stack(
+        children: [
+          DelayedAnimation(delay: 1000, 
+          child:  _pages[_indexPage]
+        )
+        ]
+      ),
       bottomNavigationBar: CustomBottomNavigationBar(
         indexpage: _indexPage,
         onClock: (index) {

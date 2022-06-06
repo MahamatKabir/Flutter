@@ -47,7 +47,7 @@ class _TransactionDialogState extends State<TransactionDialog> {
   @override
   Widget build(BuildContext context) {
     final isEditing = widget.transaction != null;
-    final title = isEditing ? 'Edit Transaction' : 'Add Transaction';
+    final title = isEditing ? 'İşlemi Düzenle' : 'İşlem Ekle';
 
     return AlertDialog(
       title: Text(title),
@@ -57,11 +57,11 @@ class _TransactionDialogState extends State<TransactionDialog> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               buildName(),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               buildAmount(),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               buildRadioButtons(),
             ],
           ),
@@ -76,22 +76,22 @@ class _TransactionDialogState extends State<TransactionDialog> {
 
   Widget buildName() => TextFormField(
         controller: nameController,
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           border: OutlineInputBorder(),
-          hintText: 'Enter Name',
+          hintText: 'İsiminiz giriniz',
         ),
         validator: (name) =>
-            name != null && name.isEmpty ? 'Enter a name' : null,
+            name != null && name.isEmpty ? 'İsiminiz giriniz' : null,
       );
 
   Widget buildAmount() => TextFormField(
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           border: OutlineInputBorder(),
-          hintText: 'Enter Amount',
+          hintText: 'Miktar girin',
         ),
         keyboardType: TextInputType.number,
         validator: (amount) => amount != null && double.tryParse(amount) == null
-            ? 'Enter a valid number'
+            ? 'Geçerli bir numara girin'
             : null,
         controller: amountController,
       );
@@ -99,13 +99,13 @@ class _TransactionDialogState extends State<TransactionDialog> {
   Widget buildRadioButtons() => Column(
         children: [
           RadioListTile<bool>(
-            title: Text('Expense'),
+            title: Text('Gider'),
             value: true,
             groupValue: isExpense,
             onChanged: (value) => setState(() => isExpense = value!),
           ),
           RadioListTile<bool>(
-            title: Text('Income'),
+            title: Text('Gelir'),
             value: false,
             groupValue: isExpense,
             onChanged: (value) => setState(() => isExpense = value!),
@@ -114,12 +114,12 @@ class _TransactionDialogState extends State<TransactionDialog> {
       );
 
   Widget buildCancelButton(BuildContext context) => TextButton(
-        child: Text('Cancel'),
+        child: Text('Iptal etme'),
         onPressed: () => Navigator.of(context).pop(),
       );
 
   Widget buildAddButton(BuildContext context, {required bool isEditing}) {
-    final text = isEditing ? 'Save' : 'Add';
+    final text = isEditing ? 'Kaydet' : 'Ekle';
 
     return TextButton(
       child: Text(text),

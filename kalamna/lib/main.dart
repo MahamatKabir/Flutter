@@ -4,12 +4,9 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:kalamna/constants.dart';
 import 'package:kalamna/controllers/controller.dart';
 import 'package:kalamna/screens/welcome_screen.dart';
-import 'package:kalamna/spellingbe/spelli.dart';
 import 'package:provider/provider.dart';
-
 import 'localization/app_localization.dart';
 import 'localization/localization_constants.dart';
-import 'screens/findword/Findcolor_screen.dart';
 
 
 void main() {
@@ -73,7 +70,7 @@ class _MyAppState extends State<MyApp> {
           duration: 500,
           splashTransition: SplashTransition.rotationTransition,
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
-          nextScreen: WelcomeScreen(),
+          nextScreen: WelcomePage(),
         ),
        //set Localizations
        locale: _locale,

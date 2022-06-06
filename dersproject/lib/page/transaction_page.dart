@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import '../boxes.dart';
 import '../model/transaction.dart';
 import 'package:intl/intl.dart';
-
 import '../widget/transaction_dialog.dart';
 
 
@@ -17,14 +15,13 @@ class _TransactionPageState extends State<TransactionPage> {
   @override
   void dispose() {
     Hive.close();
-
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text('Hive Expense Tracker'),
+          title: const Text('Aylik Harcama To Do App'),
           centerTitle: true,
         ),
         body: ValueListenableBuilder<Box<Transaction>>(
@@ -48,9 +45,9 @@ class _TransactionPageState extends State<TransactionPage> {
 
   Widget buildContent(List<Transaction> transactions) {
     if (transactions.isEmpty) {
-      return Center(
+      return const Center(
         child: Text(
-          'No expenses yet!',
+          'Henüz masraf yok!',
           style: TextStyle(fontSize: 24),
         ),
       );
@@ -68,17 +65,17 @@ class _TransactionPageState extends State<TransactionPage> {
         children: [
           SizedBox(height: 24),
           Text(
-            'Net Expense: $newExpenseString',
+            'Net Gider: $newExpenseString',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20,
               color: color,
             ),
           ),
-          SizedBox(height: 24),
+          const SizedBox(height: 24),
           Expanded(
             child: ListView.builder(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               itemCount: transactions.length,
               itemBuilder: (BuildContext context, int index) {
                 final transaction = transactions[index];
@@ -103,11 +100,11 @@ class _TransactionPageState extends State<TransactionPage> {
     return Card(
       color: Colors.white,
       child: ExpansionTile(
-        tilePadding: EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+        tilePadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
         title: Text(
           transaction.name,
           maxLines: 2,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
         ),
         subtitle: Text(date),
         trailing: Text(

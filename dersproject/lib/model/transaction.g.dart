@@ -20,7 +20,7 @@ class TransactionAdapter extends TypeAdapter<Transaction> {
       ..name = fields[0] as String
       ..createdDate = fields[1] as DateTime
       ..isExpense = fields[2] as bool
-      ..amount = fields[3] as double;
+      ..amount = fields[3] ;
   }
 
   @override
@@ -39,6 +39,7 @@ class TransactionAdapter extends TypeAdapter<Transaction> {
 
   @override
   int get hashCode => typeId.hashCode;
+  
 
   @override
   bool operator ==(Object other) =>

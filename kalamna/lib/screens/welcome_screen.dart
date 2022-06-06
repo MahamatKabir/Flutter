@@ -1,128 +1,127 @@
 import 'package:flutter/material.dart';
-import 'package:kalamna/constants.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:kalamna/sidebar/sidebar_layout.dart';
+import 'delayed_animation.dart';
 
-class WelcomeScreen extends StatefulWidget {
-  @override
-  _WelcomeScreenState createState() => _WelcomeScreenState();
-}
-
-class _WelcomeScreenState extends State<WelcomeScreen> {
+class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: Container(
-        height: MediaQuery.of(context).size.height,
-        child: Stack(
-          children: <Widget>[
-            Container(
-              height: MediaQuery.of(context).size.height - 100,
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(50.0),
-                  bottomRight: Radius.circular(50.0),
-                ),
-              ),
-            ),
-            Positioned(
-              top: 200.0,
-              left: 100.0,
-              right: 100.0,
-              child: Column(
-                children: <Widget>[
-                  ClipRRect(
-                    child: Image.asset(
-                      "assets/images/kalam1.png",
-                      height: 180.0,
-                      width: 180.0,
-                    ),
-                  ),
-                  Text(
-                    "Kalami",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 32.0,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 1.1,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Positioned(
-              bottom: 170.0,
-              left: 50.0,
-              right: 50.0,
-              child: Column(
-                children: <Widget>[
-                  Text(
-                    "Hoş geldin",
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 0, 0, 0),
-                      fontSize: 29.0,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 1.8,
-                    ),
-                  ),
-                  SizedBox(height: 20.0),
-                  Text(
-                    "Bir dil Öğren.Dünya ile taniş.",
-                    style: TextStyle(
-                      color: kTextColor,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.w800,
-                    ),
-                    textAlign: TextAlign.center,
-                    maxLines: 1,
-                  ),
-                ],
-              ),
-            ),
-            Positioned(
-              top: MediaQuery.of(context).size.height - 130,
-              left: 100.0,
-              right: 100.0,
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => SideBarLayout()),
-                  );
-                },
-                child: Container(
-                  width: 150.0,
-                  height: 55.0,
-                  padding: EdgeInsets.only(left: 40.0),
+        child: Stack(children: [
+          Positioned(
+              top: 100,
+              right: -50,
+              child: Container(
+                  width: 100,
+                  height: 100,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50.0),
-                    color: Color.fromARGB(255, 240, 160, 1),
+                    borderRadius: BorderRadius.circular(50),
+                   color: const Color(0xFF262AAA),
+                  ))),
+          Positioned(
+              top: -30,
+              left: -50,
+              child: Container(
+                  width: 200,
+                  height: 200,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    color: const Color(0xFF262AAA),
+                  ))),
+          Padding(
+            padding: const EdgeInsets.only(left: 0, right: 0, top: 200),
+            child: Column(
+              children: [
+                DelayedAnimation(
+                  delay: 2500,
+                  child: Container(
+                    margin: EdgeInsets.all(1),
+                    child: Image.asset(
+                      "assets/images/kidos.png",
+                    ),
                   ),
-                  child: Row(
-                    children: <Widget>[
-                      Text(
-                        "BAŞLA",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold,
+                ),
+                // DelayedAnimation(
+                //     delay: 1500,
+                //     child: Container(
+                //       height: 170,
+                //       child: Text(
+                //         "KALAM",
+                //         textAlign: TextAlign.center,
+                //         style: GoogleFonts.poppins(
+                //           color: Color.fromARGB(255, 19, 4, 59),
+                //           fontWeight: FontWeight.bold,
+                //           fontSize: 50,
+                //         ),
+                //       ),
+                //     )),
+                DelayedAnimation(
+                  delay: 3500,
+                  child: Container(
+                    height: 50,
+                    margin: const EdgeInsets.only(
+                      top: 30,
+                      bottom: 20,
+                    ),
+                    child: Text(
+                      "Learn a Language Meet the World",
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.poppins(
+                        color: const Color(0xFF262AAA),
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                ),
+                DelayedAnimation(
+                    delay: 1500,
+                    child: SizedBox.fromSize(
+                      size: Size(100, 100),
+                      child: ClipOval(
+                        child: Material(
+                          color: const Color(0xFF262AAA),
+                          child: InkWell(
+                            splashColor: Colors.white,
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SideBarLayout()));
+                            },
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: const <Widget>[
+                                Icon(
+                                  Icons.arrow_right,
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  size: 100,
+                                ), // <-- Icon
+                                // <-- Text
+                              ],
+                            ),
+                          ),
                         ),
                       ),
-                      SizedBox(width: 20.0),
-                      Icon(
-                        Icons.keyboard_arrow_right,
-                        color: Colors.white,
-                        size: 28.0,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+                    )),
+              ],
             ),
-          ],
-        ),
+          ),
+          Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                width: double.infinity,
+                height: 100,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(100),
+                    topRight: Radius.circular(100),
+                  ),
+                  color: const Color(0xFF262AAA),
+                ),
+              ))
+        ]),
       ),
     );
   }

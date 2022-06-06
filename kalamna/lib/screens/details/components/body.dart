@@ -21,7 +21,7 @@ class Body extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
               height: 400,
               child: Divider(
                 color: Colors.white,
@@ -120,6 +120,7 @@ class Body extends StatelessWidget {
                 ),
               ),
               if(product.id != 1)
+              
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50),

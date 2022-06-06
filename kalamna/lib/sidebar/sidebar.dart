@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rxdart/rxdart.dart';
 
-
+import '../screens/delayed_animation.dart';
 import '../sidebar/menu_item.dart';
 
 class SideBar extends StatefulWidget {
-  
   @override
   _SideBarState createState() => _SideBarState();
 }
 
-class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<SideBar> {
+class _SideBarState extends State<SideBar>
+    with SingleTickerProviderStateMixin<SideBar> {
   late AnimationController _animationController;
   late StreamController<bool> isSidebarOpenedStreamController;
   late Stream<bool> isSidebarOpenedStream;
@@ -23,7 +23,8 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
   @override
   void initState() {
     super.initState();
-    _animationController = AnimationController(vsync: this, duration: _animationDuration);
+    _animationController =
+        AnimationController(vsync: this, duration: _animationDuration);
     isSidebarOpenedStreamController = PublishSubject<bool>();
     isSidebarOpenedStream = isSidebarOpenedStreamController.stream;
     isSidebarOpenedSink = isSidebarOpenedStreamController.sink;
@@ -62,7 +63,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
           duration: _animationDuration,
           top: 0,
           bottom: 0,
-          left:  isSideBarOpenedAsync.data! ? 0 : -screenWidth,
+          left: isSideBarOpenedAsync.data! ? 0 : -screenWidth,
           right: isSideBarOpenedAsync.data! ? 0 : screenWidth - 45,
           child: Row(
             children: <Widget>[
@@ -72,61 +73,44 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                   color: const Color(0xFF262AAA),
                   child: Column(
                     children: <Widget>[
-                      SizedBox(
+                      const SizedBox(
                         height: 100,
                       ),
-                      ListTile(
-                        title: Text(
-                          "Prateek",
-                          style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.w800),
-                        ),
-                        subtitle: Text(
-                          "www.techieblossom.com",
-                          style: TextStyle(
-                            color: Color(0xFF1BB5FD),
-                            fontSize: 18,
+                      DelayedAnimation(
+                        delay: 2500,
+                        child: Container(
+                          margin: const EdgeInsets.all(1),
+                          child: Image.asset(
+                            "assets/images/kidos.png",
                           ),
-                        ),
-                        leading: CircleAvatar(
-                          child: Icon(
-                            Icons.perm_identity,
-                            color: Colors.white,
-                          ),
-                          radius: 40,
                         ),
                       ),
                       Divider(
-                        height: 64,
+                        height: 10,
                         thickness: 0.5,
-                        color: Colors.white.withOpacity(0.3),
+                        color: Colors.white.withOpacity(1),
                         indent: 32,
                         endIndent: 32,
                       ),
                       MenuItem(
                         icon: Icons.home,
                         title: "Home",
-                        onTap: () {
-                          
-                        },
+                        onTap: () {},
                       ),
                       MenuItem(
                         icon: Icons.person,
                         title: "My Account",
-                        onTap: () {
-                         
-                        },
+                        onTap: () {},
                       ),
                       MenuItem(
                         icon: Icons.shopping_basket,
                         title: "My Orders",
-                        onTap: () {
-                        },
+                        onTap: () {},
                       ),
                       MenuItem(
-                        icon: Icons.card_giftcard,
-                        title: "Wishlist",
-                        onTap: (){}
-                      ),
+                          icon: Icons.card_giftcard,
+                          title: "Wishlist",
+                          onTap: () {}),
                       Divider(
                         height: 64,
                         thickness: 0.5,
@@ -135,15 +119,13 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                         endIndent: 32,
                       ),
                       MenuItem(
-                        icon: Icons.settings,
-                        title: "Settings",
-                        onTap: () {}
-                      ),
+                          icon: Icons.settings,
+                          title: "Settings",
+                          onTap: () {}),
                       MenuItem(
-                        icon: Icons.exit_to_app,
-                        title: "Logout",
-                        onTap: () {}
-                      ),
+                          icon: Icons.exit_to_app,
+                          title: "Logout",
+                          onTap: () {}),
                     ],
                   ),
                 ),
@@ -159,12 +141,12 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                     child: Container(
                       width: 35,
                       height: 90,
-                      color: Color.fromARGB(255, 255, 255, 255),
+                      color: const Color(0xFF262AAA),
                       alignment: Alignment.centerLeft,
                       child: AnimatedIcon(
                         progress: _animationController.view,
                         icon: AnimatedIcons.menu_close,
-                        color: Color(0xFF1BB5FD),
+                        color: Color.fromARGB(255, 255, 255, 255),
                         size: 25,
                       ),
                     ),
