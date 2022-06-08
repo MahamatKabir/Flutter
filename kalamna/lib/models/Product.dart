@@ -34,15 +34,8 @@ class Product {
 List<Product> products = [
   Product(
       id: 1,
-      title: "Alfabe",
-      size: [
-        {
-          "id":1,
-          "question":"iki bul",
-          "options": ['1','2','3','4'],
-          'answer_index': 1,
-        }
-      ],
+      title: "Alphabet",
+      size:2,
      
       description: dummyText,
       page: AlphabetScreen1(),
@@ -52,7 +45,7 @@ List<Product> products = [
       color: Color.fromARGB(255, 255, 255, 255)),
   Product(
       id: 2,
-      title: "Sayilar",
+      title: "Numbers",
       size: 8,
       description: dummyText,
       page: NumberScreen(),
@@ -63,7 +56,7 @@ List<Product> products = [
       color: Color.fromARGB(255, 255, 255, 255)),
   Product(
       id: 3,
-      title: "Renkler",
+      title: "Colors",
       size: 10,
       description: dummyText,
       page: ColorScreen(),
@@ -75,7 +68,7 @@ List<Product> products = [
       
   Product(
       id: 4,
-      title: "Şekiler",
+      title: "Shapes",
       size: 11,
       description: dummyText,
       page: AlphabetScreen1(),
@@ -86,7 +79,7 @@ List<Product> products = [
       color: Color.fromARGB(255, 255, 255, 255)),
   Product(
       id: 5,
-      title: "Hayvanlar",
+      title: "Animals",
       size: 12,
       description: dummyText,
       page:  AnimalScreen(),
@@ -97,7 +90,7 @@ List<Product> products = [
       color: Color.fromARGB(255, 255, 254, 255)),
   Product(
     id: 6,
-    title: "Meyveler",
+    title: "Fruits",
     size: 12,
     description: dummyText,
     page:  Dragdrop(),
@@ -109,7 +102,7 @@ List<Product> products = [
   ),
   Product(
     id: 7,
-    title: "Yiyecek",
+    title: "Food",
     size: 12,
     description: dummyText,
     page:  AlphabetScreen1(),
@@ -121,7 +114,7 @@ List<Product> products = [
   ),
   Product(
     id: 8,
-    title: "Spor",
+    title: "Sports",
     size: 12,
     description: dummyText,
     page: AlphabetScreen1(),

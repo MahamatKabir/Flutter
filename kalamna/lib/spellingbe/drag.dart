@@ -32,7 +32,7 @@ class _DragState extends State<Drag> {
             height: size.height * 0.15,
             child: Center(
               child: _accepted
-                  ? SizedBox()
+                  ? const SizedBox()
                   : Draggable(
                       data: widget.letter,
                       onDragEnd: (details) {

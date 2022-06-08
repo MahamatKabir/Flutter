@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:kalamna/models/Product.dart';
-
 
 class Body extends StatelessWidget {
   final Product product;
-   final bool? remov; 
+  final bool? remov;
 
-  const Body({Key? key, required this.product, this.remov = false}) : super(key: key);
+  const Body({Key? key, required this.product, this.remov = false})
+      : super(key: key);
   bodyWidget(BuildContext context) => Stack(
         children: <Widget>[
           Align(
@@ -25,7 +26,7 @@ class Body extends StatelessWidget {
               height: 400,
               child: Divider(
                 color: Colors.white,
-                height:90,
+                height: 90,
                 thickness: 5,
                 indent: 20,
                 endIndent: 20,
@@ -43,22 +44,24 @@ class Body extends StatelessWidget {
                 margin: const EdgeInsets.all(8),
                 child: InkWell(
                   onTap: () {
-                      Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => 
-                     product.page
-                    ),
-                  );
-                    
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => product.page),
+                    );
                   },
                   splashColor: Colors.deepPurple,
                   child: Center(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: const [
-                        Image(
-                            image: AssetImage('assets/images/learne.jpg'),
+                         Image(
+                            image: AssetImage('assets/images/lerarniss.png'),
                             width: 100),
+                        Text(
+                          'Learn',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize:20, fontWeight: FontWeight.bold,color: Colors.black)
+                        ),
                       ],
                     ),
                   ),
@@ -72,11 +75,9 @@ class Body extends StatelessWidget {
                 child: InkWell(
                   onTap: () {
                     Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => 
-                     product.find
-                    ),
-                  );
+                      context,
+                      MaterialPageRoute(builder: (_) => product.find),
+                    );
                   },
                   splashColor: Colors.deepPurple,
                   child: Center(
@@ -84,14 +85,18 @@ class Body extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: const [
                         Image(
-                            image: AssetImage('assets/images/find.jpeg'),
+                            image: AssetImage('assets/images/finds.jpeg'),
                             width: 100),
+                        Text(
+                          'Find the word',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize:20, fontWeight: FontWeight.bold,color: Colors.black)
+                        ),
                       ],
                     ),
                   ),
                 ),
               ),
-            
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50),
@@ -99,12 +104,10 @@ class Body extends StatelessWidget {
                 margin: const EdgeInsets.all(8.0),
                 child: InkWell(
                   onTap: () {
-                      Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => 
-                     product.drop
-                    ),
-                  );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => product.drop),
+                    );
                   },
                   splashColor: Colors.deepPurple,
                   child: Center(
@@ -112,42 +115,51 @@ class Body extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: const [
                         Image(
-                            image: AssetImage('assets/images/Drag.png'),
-                            width: 100),
+                            image: AssetImage('assets/images/dropdrag.png'),
+                            width: 100
+                        ),
+                        Text(
+                          'Drop',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize:20, fontWeight: FontWeight.bold,color: Colors.black)
+                        ),
                       ],
                     ),
                   ),
                 ),
               ),
-              if(product.id != 1)
-              
-              Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50),
-                ),
-                margin: const EdgeInsets.all(8.0),
-                child: InkWell(
-                  onTap: () {
+              if (product.id != 1)
+                Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  margin: const EdgeInsets.all(8.0),
+                  child: InkWell(
+                    onTap: () {
                       Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => 
-                     product.spell
-                    ),
-                  );
-                  },
-                  splashColor: Colors.deepPurple,
-                  child: Center(
-                    child: Column(
-                       mainAxisSize: MainAxisSize.min,
-                      children: const [
-                        Image(
-                            image: AssetImage('assets/images/writing.jpg'),
-                            width: 100),
-                      ],
+                        context,
+                        MaterialPageRoute(builder: (_) => product.spell),
+                      );
+                    },
+                    splashColor: Colors.deepPurple,
+                    child: Center(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: const [
+                          Image(
+                              image: AssetImage('assets/images/pencil.jpeg'),
+                              width: 100
+                          ),
+                          Text(
+                          'Writing',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize:20, fontWeight: FontWeight.bold,color: Colors.black)
+                        ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
             ]),
           ),
         ],
