@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:kalamna/models/Product.dart';
 
 class Body extends StatelessWidget {
@@ -169,7 +168,7 @@ class Body extends StatelessWidget {
     // It provide us total height and width
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 11, 7, 133),
+      backgroundColor: const Color.fromARGB(255, 11, 7, 133),
       body: bodyWidget(context),
     );
   }

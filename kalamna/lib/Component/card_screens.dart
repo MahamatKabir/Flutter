@@ -37,7 +37,7 @@ class ScreenRow extends StatelessWidget {
           btncolor: btnColor1,
           title: title1,
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
         ScreenBtn(
@@ -45,7 +45,7 @@ class ScreenRow extends StatelessWidget {
           btncolor: btnColor2,
           title: title2,
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
         ScreenBtn(
@@ -78,9 +78,9 @@ class ScreenBtn extends StatelessWidget {
               primary: btncolor,
               onPrimary: Colors.white,
               elevation: 10,
-              textStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-              padding: EdgeInsets.all(8),
-              minimumSize: Size(100, 50)),
+              textStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+              padding: const EdgeInsets.all(8),
+              minimumSize: const Size(100, 50)),
           child: Text(title)),
     );
   }
@@ -96,11 +96,11 @@ class ShowImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
         child: Container(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
           image: DecorationImage(image: AssetImage(image), fit: BoxFit.fill),
-          border: Border.all(color: Color.fromARGB(255, 11, 7, 133), width: 5),
-          borderRadius: BorderRadius.all(Radius.circular(15))),
+          border: Border.all(color: const Color.fromARGB(255, 11, 7, 133), width: 5),
+          borderRadius: const BorderRadius.all(Radius.circular(15))),
     ));
   }
 }
@@ -140,7 +140,7 @@ class ScreenRowColor extends StatelessWidget {
           btncolor: btnColor1,
           image: image1,
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
         ScreenBtnColors(
@@ -148,7 +148,7 @@ class ScreenRowColor extends StatelessWidget {
           btncolor: btnColor2,
           image: image2,
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
       ],
@@ -177,9 +177,9 @@ class ScreenBtnColors extends StatelessWidget {
             primary: btncolor,
             onPrimary: Colors.white,
             elevation: 10,
-            textStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-            padding: EdgeInsets.all(8),
-            minimumSize: Size(100, 100)),
+            textStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+            padding: const EdgeInsets.all(8),
+            minimumSize: const Size(100, 100)),
         child: image,
         //child: Text(title)
       ),

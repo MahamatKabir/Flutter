@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:kalamna/constants.dart';
 import 'package:kalamna/screens/delayed_animation.dart';
 import 'package:kalamna/screens/home/components/body.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../localization/localization_constants.dart';
 import '../../main.dart';
 import '../../models/language.dart';
@@ -32,12 +30,12 @@ class _HomeScreenState extends State<HomeScreen> {
     }
       return Scaffold(
       appBar: AppBar(
-      backgroundColor:  Color.fromARGB(255, 49, 64, 165),
+      backgroundColor:  const Color.fromARGB(255, 49, 64, 165),
        leading: IconButton(
       
         icon: SvgPicture.asset(
           'assets/icons/back.svg',
-          color: Color.fromARGB(255, 255, 255, 255),
+          color: const Color.fromARGB(255, 255, 255, 255),
         ),
         onPressed: () => Navigator.pop(context),
       ),

@@ -23,9 +23,9 @@ class _AnimalScreenState extends State<AnimalScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.orange[100],
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
         appBar: AppBar(
-        title: Text('Animals'),
+        title: const Text('Animals'),
       ),
         body: SafeArea(
           child: Padding(
@@ -33,7 +33,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
               child: Column(
                 children: [
                   ShowImage(image: imageView),
-                  SizedBox(height: 2),
+                  const SizedBox(height: 2),
                   Expanded(
                       child: Column(
                     children: [
@@ -50,9 +50,9 @@ class _AnimalScreenState extends State<AnimalScreen> {
                         title1: 'Dog',
                         title2: 'Cat',
                         title3: 'Lion',
-                        btnColor2: Colors.pink,
+                        btnColor2: Color.fromARGB(255, 10, 4, 130),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 2,
                       ),
                       ScreenRow(
@@ -68,9 +68,9 @@ class _AnimalScreenState extends State<AnimalScreen> {
                         title1: 'Elephant',
                         title2: 'Goat',
                         title3: 'Wolf',
-                        btnColor2: Colors.pink,
+                        btnColor2: Color.fromARGB(255, 8, 25, 88),
                       ),
-                      SizedBox(height: 2),
+                      const SizedBox(height: 2),
                       ScreenRow(
                         onpressedBtn1: () => onClick(
                             newImage: PathImageAnimal.horsIm,
@@ -84,7 +84,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                         title1: 'Horse',
                         title2: 'Chicken',
                         title3: 'Parrot',
-                        btnColor2: Colors.pink,
+                        btnColor2:Color.fromARGB(255, 8, 25, 88),
                       ),
                     ],
                   ))

@@ -4,7 +4,6 @@ import 'package:kalamna/models/Product.dart';
 
 import '../../../constants.dart';
 import '../../../localization/localization_constants.dart';
-import '../../delayed_animation.dart';
 
 class ItemCard extends StatelessWidget {
   final Product product;

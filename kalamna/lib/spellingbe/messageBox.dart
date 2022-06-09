@@ -22,16 +22,16 @@ class MessageBox extends StatelessWidget {
     }
     return AlertDialog(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(60),
+          borderRadius: BorderRadius.circular(100),
         ),
         backgroundColor: Colors.amber,
-        title: Text(title, style: Theme.of(context).textTheme.headline1),
+        title: Center(child: Text(title, style: Theme.of(context).textTheme.headline3?.copyWith(fontWeight: FontWeight.bold,color: Colors.white))),
         actionsAlignment: MainAxisAlignment.center,
         actions: [
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(60),
+                borderRadius: BorderRadius.circular(30),
               ),
             ),
             onPressed: () {
@@ -49,7 +49,7 @@ class MessageBox extends StatelessWidget {
               child: Text(
                 buttonText,
                 style:
-                    Theme.of(context).textTheme.headline1?.copyWith(fontSize: 30),
+                    Theme.of(context).textTheme.headline1?.copyWith(fontSize: 20, fontWeight: FontWeight.bold,color: Colors.white),
               ),
             ),
           )

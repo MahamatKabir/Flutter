@@ -25,7 +25,7 @@ class _FlyInAnimationState extends State<FlyInAnimation> with SingleTickerProvid
   @override
   void initState(){
     _controller =  AnimationController(
-      duration: Duration(milliseconds:1800),
+      duration: const Duration(milliseconds:500),
       vsync: this, 
     );
     double begin = 0,end =1;

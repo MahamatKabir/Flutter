@@ -25,14 +25,14 @@ class ScreenRowAlphabet extends StatelessWidget {
           onpressedBtn: onpressedBtn1,
           image: image1,
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
         ScreenBtnAlphabet(
           onpressedBtn: onpressedBtn2,
           image: image2,
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
       ],
@@ -55,9 +55,9 @@ class ScreenBtnAlphabet extends StatelessWidget {
         style: ElevatedButton.styleFrom(
             primary: Colors.orange[100],
             onPrimary: Colors.white,
-            textStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-            padding: EdgeInsets.all(8),
-            minimumSize: Size(100, 100)),
+            textStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+            padding: const EdgeInsets.all(8),
+            minimumSize: const Size(100, 100)),
         child: image,
         //child: Text(title)
       ),

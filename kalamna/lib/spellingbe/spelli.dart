@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
 import '../controllers/controller.dart';
@@ -54,100 +55,114 @@ class _SpelliState extends State<Spelli> {
               _generateWord();
             }
           }
-          return SafeArea(
-            child: Stack(
-              children: [
-                Container(
-                  color: const Color.fromARGB(255, 11, 5, 75),
+          return Scaffold(
+            appBar: AppBar(
+              backgroundColor: const Color.fromARGB(255, 49, 64, 165),
+              leading: IconButton(
+                icon: SvgPicture.asset(
+                  'assets/icons/back.svg',
+                  color: const Color.fromARGB(255, 255, 255, 255),
                 ),
-                Column(children: [
-                  const Expanded(
-                    flex: 1,
-                    child: SizedBox(),
+                onPressed: () => Navigator.pop(context),
+              ),
+            ),
+            body: SafeArea(
+              child: Stack(
+                children: [
+                  Container(
+                    color: const Color.fromARGB(255, 11, 5, 75),
                   ),
-                  Expanded(
-                      flex: 3,
-                      child: SizedBox(
-                          child: Padding(
-                             padding: const EdgeInsets.all(12.0),
-                             child: Container(
-                             decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(60),
-                            ),
-                            child: Row(children: [
-                              Expanded(
-                                flex: 2,
-                                child: Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(18, 2, 2, 2),
-                                  child: FittedBox(
-                                    child: Text(
-                                      'Spelling Bee',
-                                      style:
-                                          Theme.of(context).textTheme.headline1?.copyWith(fontWeight: FontWeight.bold),
+                  Column(children: [
+                    const Expanded(
+                      flex: 1,
+                      child: SizedBox(),
+                    ),
+                    Expanded(
+                        flex: 3,
+                        child: SizedBox(
+                            child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(60),
+                              ),
+                              child: Row(children: [
+                                Expanded(
+                                  flex: 2,
+                                  child: Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(18, 2, 2, 2),
+                                    child: FittedBox(
+                                      child: Text(
+                                        'Spelling Bee',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline1
+                                            ?.copyWith(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.amber),
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              Expanded(
-                                flex: 1,
-                                child: Padding(
-                                    padding: const EdgeInsets.all(18.0),
-                                    child: Selector<Controller, bool>(
-                                      selector: (_, controller) =>
-                                          controller.letterDropped,
-                                      builder: (_, dropped, __) =>
-                                          FlyInAnimation(
-                                        removeScale: true,
-                                        animate: dropped,
-                                        animationCompleted:
-                                            _animationCompleted(),
-                                        child: Image.asset(
-                                            'assets/images/Bee.png'),
-                                      ),
-                                    )),
-                              )
-                            ])),
-                      ))),
-                  Expanded(
+                                Expanded(
+                                  flex: 1,
+                                  child: Padding(
+                                      padding: const EdgeInsets.all(18.0),
+                                      child: Selector<Controller, bool>(
+                                        selector: (_, controller) =>
+                                            controller.letterDropped,
+                                        builder: (_, dropped, __) =>
+                                            FlyInAnimation(
+                                          removeScale: true,
+                                          animate: dropped,
+                                          animationCompleted:
+                                              _animationCompleted(),
+                                          child: Image.asset(
+                                              'assets/images/Bee.png'),
+                                        ),
+                                      )),
+                                )
+                              ])),
+                        ))),
+                    Expanded(
+                        flex: 4,
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: _dropWord.characters
+                                .map((e) => FlyInAnimation(
+                                    animate: true, child: Drop(letter: e)))
+                                .toList())),
+                    Expanded(
+                        flex: 4,
+                        child: FlyInAnimation(
+                            animate: true,
+                            child:
+                                Image.asset('assets/images/$_dropWord.jpg'))),
+                    Expanded(
                       flex: 4,
                       child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: _dropWord.characters
-                              .map((e) => FlyInAnimation(
-                                  animate: true, 
-                                  child: Drop(letter: e)))
-                              .toList())),
-                  Expanded(
-                      flex: 4,
-                      child: FlyInAnimation(
-                          animate: true,
-                          child: Image.asset('assets/images/$_dropWord.jpg'))),
-                  Expanded(
-                    flex: 4,
-                    child: Row(
-                     
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: _word.characters
-                          .map(
-                            (e) => FlyInAnimation(
-                              animate: true,
-                              
-                              child: Drag(
-                                letter: e,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: _word.characters
+                            .map(
+                              (e) => FlyInAnimation(
+                                animate: true,
+                                child: Drag(
+                                  letter: e,
+                                ),
                               ),
-                            ),
-                          )
-                          .toList(),
+                            )
+                            .toList(),
+                      ),
                     ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: ProgressBar(),
-                  ),
-                ]),
-              ],
+                    Expanded(
+                      flex: 1,
+                      child: ProgressBar(),
+                    ),
+                  ]),
+                ],
+              ),
             ),
           );
         });

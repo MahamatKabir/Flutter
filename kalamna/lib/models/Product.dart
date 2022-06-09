@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 import 'package:kalamna/spellingbe/spelli.dart';
 import '../Component/alphabet_drop.dart';
@@ -6,7 +8,6 @@ import '../Component/number_drop.dart';
 import '../screens/Animal_Screen.dart';
 import '../screens/details/components/alphabet_screen.dart';
 import '../screens/details/components/color_screen.dart';
-import '../screens/details/components/dene_ad.dart';
 import '../screens/details/components/number_screen.dart';
 import '../screens/findword/Findalphabet_screen.dart';
 import '../screens/findword/Findcolor_screen.dart';
@@ -42,7 +43,7 @@ List<Product> products = [
       drop: AlphabetDrop(),
       find:FindAlphabetScreen(),
       image: "assets/images/alphabet.png",
-      color: Color.fromARGB(255, 255, 255, 255)),
+      color: const Color.fromARGB(255, 255, 255, 255)),
   Product(
       id: 2,
       title: "Numbers",
@@ -53,7 +54,7 @@ List<Product> products = [
       find:FindNumberScreen(),
       spell: Spelli(),
       image: "assets/images/sayi.png",
-      color: Color.fromARGB(255, 255, 255, 255)),
+      color: const Color.fromARGB(255, 255, 255, 255)),
   Product(
       id: 3,
       title: "Colors",
@@ -64,7 +65,7 @@ List<Product> products = [
       find:FindAlphabetScreen(),
       spell: Spelli(),
       image: "assets/images/rengler.png",
-      color: Color.fromARGB(255, 255, 255, 255)),
+      color: const Color.fromARGB(255, 255, 255, 255)),
       
   Product(
       id: 4,
@@ -76,7 +77,7 @@ List<Product> products = [
       find:FindAlphabetScreen(),
       spell: Spelli(),
       image: "assets/images/sekil.png",
-      color: Color.fromARGB(255, 255, 255, 255)),
+      color: const Color.fromARGB(255, 255, 255, 255)),
   Product(
       id: 5,
       title: "Animals",
@@ -87,7 +88,7 @@ List<Product> products = [
       find: FindcolorScreen(),
       spell: Spelli(),
       image: "assets/images/hayvan.png",
-      color: Color.fromARGB(255, 255, 254, 255)),
+      color: const Color.fromARGB(255, 255, 254, 255)),
   Product(
     id: 6,
     title: "Fruits",
@@ -98,7 +99,7 @@ List<Product> products = [
     find:FindAlphabetScreen(),
     spell: Spelli(),
     image: "assets/images/meyve.png",
-    color: Color.fromARGB(255, 255, 255, 255),
+    color: const Color.fromARGB(255, 255, 255, 255),
   ),
   Product(
     id: 7,
@@ -110,7 +111,7 @@ List<Product> products = [
     find:FindAlphabetScreen(),
     spell: Spelli(),
     image: "assets/images/yiyecek.png",
-    color: Color.fromARGB(255, 255, 255, 255),
+    color: const Color.fromARGB(255, 255, 255, 255),
   ),
   Product(
     id: 8,
@@ -122,7 +123,7 @@ List<Product> products = [
     find:FindAlphabetScreen(),
     spell: Spelli(),
     image: "assets/images/sport.png",
-    color: Color.fromARGB(255, 255, 255, 255),
+    color: const Color.fromARGB(255, 255, 255, 255),
   ),
 ];
 String dummyText =

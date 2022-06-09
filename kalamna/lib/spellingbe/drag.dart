@@ -53,17 +53,16 @@ class _DragState extends State<Drag> {
                             .textTheme
                             .headline1
                             ?.copyWith(shadows: [
-                          Shadow(
+                          const Shadow(
                             offset: Offset(3, 3),
-                            color: Colors.white.withOpacity(1),
+                            color: Colors.amber,
                             blurRadius: 5,
                           )
                         ]),
                       ),
                       child: Text(
-                        
                         widget.letter,
-                        style: Theme.of(context).textTheme.headline1,
+                        style: Theme.of(context).textTheme.headline1?.copyWith(fontWeight: FontWeight.bold,color: Colors.white),
                       ),
                     ),
             ),

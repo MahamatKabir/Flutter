@@ -24,11 +24,11 @@ class Drop extends StatelessWidget {
         accepted = true;
       }, builder: (context, candidateData, rejectedData) {
         if (accepted) {
-          return Text(letter, style: Theme.of(context).textTheme.headline1);
+          return Text(letter, style: Theme.of(context).textTheme.headline1?.copyWith(fontWeight: FontWeight.bold,color: Colors.white),);
         }else{
           return Container(
             
-            color:Colors.white,width:50,height:20,
+            color:Colors.white,width:50,height:30,
           );
         }
       }),

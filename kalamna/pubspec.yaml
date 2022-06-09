@@ -79,7 +79,7 @@ flutter:
     - assets/icons/
     - assets/audios/
     - assets/shapes/
-    - lib/localization/lang/en.json
+    - lib/localization/lang/en.json 
     - lib/localization/lang/ar.json
     - lib/localization/lang/tr.json
     - lib/localization/lang/fr.json
