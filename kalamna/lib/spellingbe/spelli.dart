@@ -57,7 +57,7 @@ class _SpelliState extends State<Spelli> {
           }
           return Scaffold(
             appBar: AppBar(
-              backgroundColor: const Color.fromARGB(255, 49, 64, 165),
+              backgroundColor:  const Color.fromARGB(255, 11, 5, 75),
               leading: IconButton(
                 icon: SvgPicture.asset(
                   'assets/icons/back.svg',
