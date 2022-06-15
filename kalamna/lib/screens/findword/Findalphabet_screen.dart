@@ -29,7 +29,7 @@ class _FindAlphabetScreenState extends State<FindAlphabetScreen> {
   }
 
   void startTimer() {
-    timer = Timer.periodic(Duration(seconds: 1), (Timer timer) {
+    timer = Timer.periodic(const Duration(seconds: 1), (Timer timer) {
       setState(() {
         if (start < 1) {
          
@@ -45,13 +45,13 @@ class _FindAlphabetScreenState extends State<FindAlphabetScreen> {
     setState(() {
       scoresIcon = List.from(scoresIcon);
       if (isGood) {
-        scoresIcon.add(Icon(
+        scoresIcon.add(const Icon(
           Icons.check,
           color: Colors.green,
           size: 30,
         ));
       } else {
-        scoresIcon.add(Icon(
+        scoresIcon.add(const Icon(
           Icons.close,
           color: Colors.red,
           size: 30,
@@ -79,11 +79,11 @@ class _FindAlphabetScreenState extends State<FindAlphabetScreen> {
 
       Alert(
         context: context,
-        title: "Partie terminée",
-        desc: "tu as $numberOfGoodAnswer bonne reponse",
+        title: "Game Over",
+        desc: "you have  $numberOfGoodAnswer  right answer",
         buttons: [
           DialogButton(
-            child: Text(
+            child: const Text(
               "Quitter",
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
@@ -105,14 +105,14 @@ class _FindAlphabetScreenState extends State<FindAlphabetScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 11, 5, 75),
+        backgroundColor: const Color.fromARGB(255, 11, 5, 75),
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 11, 5, 75),
+          backgroundColor: const Color.fromARGB(255, 11, 5, 75),
           elevation: 0,
           leading: IconButton(
             icon: SvgPicture.asset(
               'assets/icons/back.svg',
-              color: Color.fromARGB(255, 255, 255, 255),
+              color: const Color.fromARGB(255, 255, 255, 255),
             ),
             onPressed: () => Navigator.pop(context),
           ),
@@ -134,7 +134,7 @@ class _FindAlphabetScreenState extends State<FindAlphabetScreen> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
               Container(
-                color: Colors.red,
+                color: Color.fromARGB(255, 255, 255, 255),
                 height: 300,
                 child: Image.asset('assets/images/${quizLogic.getFlagName()}'),
               ),
@@ -146,11 +146,11 @@ class _FindAlphabetScreenState extends State<FindAlphabetScreen> {
                     handleAnswers(quizLogic.getAnswer1());
                   },
                   child: Text('${quizLogic.getAnswer1()}',
-                      style: TextStyle(fontSize: 20.0),
+                      style: const TextStyle(fontSize: 20.0),
                   ),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
-                    side: BorderSide(color: Colors.red)
+                    side: const BorderSide(color: Colors.red)
                   ),
                 ),
               ),

@@ -53,14 +53,15 @@ class Body extends StatelessWidget {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: const [
-                         Image(
+                        Image(
                             image: AssetImage('assets/images/lerarniss.png'),
                             width: 100),
-                        Text(
-                          'Learn',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontSize:20, fontWeight: FontWeight.bold,color: Colors.black)
-                        ),
+                        Text('Learn',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black)),
                       ],
                     ),
                   ),
@@ -86,11 +87,12 @@ class Body extends StatelessWidget {
                         Image(
                             image: AssetImage('assets/images/finds.jpeg'),
                             width: 100),
-                        Text(
-                          'Find the word',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontSize:20, fontWeight: FontWeight.bold,color: Colors.black)
-                        ),
+                        Text('Find the word',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black)),
                       ],
                     ),
                   ),
@@ -115,13 +117,13 @@ class Body extends StatelessWidget {
                       children: const [
                         Image(
                             image: AssetImage('assets/images/dropdrag.png'),
-                            width: 100
-                        ),
-                        Text(
-                          'Drop',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontSize:20, fontWeight: FontWeight.bold,color: Colors.black)
-                        ),
+                            width: 100),
+                        Text('Drop',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black)),
                       ],
                     ),
                   ),
@@ -147,13 +149,13 @@ class Body extends StatelessWidget {
                         children: const [
                           Image(
                               image: AssetImage('assets/images/pencil.jpeg'),
-                              width: 100
-                          ),
-                          Text(
-                          'Writing',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontSize:20, fontWeight: FontWeight.bold,color: Colors.black)
-                        ),
+                              width: 100),
+                          Text('Writing',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black)),
                         ],
                       ),
                     ),

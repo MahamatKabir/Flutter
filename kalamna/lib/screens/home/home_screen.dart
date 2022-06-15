@@ -8,31 +8,20 @@ import '../../main.dart';
 import '../../models/language.dart';
 import '../../widgets/custom_bottom_navigation_bar.dart';
 import '../videopage/Video_page.dart';
-
 class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
-
 class _HomeScreenState extends State<HomeScreen> {
   int _indexPage = 0;
-  final List<Widget> _pages = [
-    Body(),
-    PageVideo(),
-    //PageStory(),
-    //PageApps()
-  ];
+  final List<Widget> _pages = [ Body(), PageVideo(),];
   @override
   Widget build(BuildContext context) {
     void _changeLanguage(Language language) async {
       Locale _locale = await setLocale(language.languageCode);
-      MyApp.setLocale(context, _locale);
-    }
-
+      MyApp.setLocale(context, _locale); }
     return Scaffold(
       appBar: AppBar(
-        // leadingWidth: 1.0, // double
-
         backgroundColor: const Color.fromARGB(255, 49, 64, 165),
         leading: IconButton(
           alignment: Alignment.centerLeft,
@@ -101,7 +90,8 @@ class _HomeScreenState extends State<HomeScreen> {
         //leading: Icon(Icons.menu, color: Colors.black),
       ),
       body: Stack(
-          children: [DelayedAnimation(delay: 1000, child: _pages[_indexPage])]),
+          children: [DelayedAnimation(
+            delay: 1000, child: _pages[_indexPage])]),
       bottomNavigationBar: CustomBottomNavigationBar(
         indexpage: _indexPage,
         onClock: (index) {
