@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:kalamna/models/itemModel.dart';
 import 'package:flutter_svg/svg.dart';
 
-class NumberDrop extends StatefulWidget {
+class ColorDrop extends StatefulWidget {
   @override
-  State<NumberDrop> createState() => _NumberDropState();
+  State<ColorDrop> createState() => _ColorDropState();
 }
 
-class _NumberDropState extends State<NumberDrop> {
+class _ColorDropState extends State<ColorDrop> {
   var player = AudioCache();
   late List<ItemModel> items;
   late List<ItemModel> items2;
@@ -19,12 +19,12 @@ class _NumberDropState extends State<NumberDrop> {
     gameOver = false;
     score = 0;
     items = [
-      ItemModel(value: 'one', name: 'one', img: 'assets/images/one.png'),
-      ItemModel(value: 'eight', name: 'eight', img: 'assets/images/eight.png'),
-      ItemModel(value: 'tree', name: 'tree', img: 'assets/images/tree.png'),
-      ItemModel(value: 'four', name: 'four', img: 'assets/images/four.png'),
-      ItemModel(value: 'seven', name: 'seven', img: 'assets/images/seven.png'),
-      ItemModel(value: 'nine', name: 'nine', img: 'assets/images/nine.png'),
+      ItemModel(value: 'red', name: 'red', img: 'assets/images/red.png'),
+      ItemModel(value: 'black', name: 'black', img: 'assets/images/black.png'),
+      ItemModel(value: 'green', name: 'green', img: 'assets/images/green.png'),
+      ItemModel(value: 'pink', name: 'pink', img: 'assets/images/pink.png'),
+      ItemModel(value: 'brown', name: 'brown', img: 'assets/images/brown.png'),
+      ItemModel(value: 'orange', name: 'orange', img: 'assets/images/orange.png'),
     ];
     items2 = List<ItemModel>.from(items);
     items.shuffle();

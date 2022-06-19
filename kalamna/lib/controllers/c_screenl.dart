@@ -22,15 +22,15 @@ class PathImageAnimal {
   static String parrotIm = 'assets/images/parrot.jpeg';
 }
 class PathImageNumber {
-  static String one = 'assets/images/1.png';
-  static String two = 'assets/images/2.png';
-  static String tree = 'assets/images/3.png';
-  static String four = 'assets/images/4.png';
-  static String five = 'assets/images/5.png';
-  static String six = 'assets/images/6.png';
-  static String seven = 'assets/images/7.png';
-  static String eight= 'assets/images/8.png';
-  static String nine = 'assets/images/9.png';
+  static String one = 'assets/images/one.png';
+  static String two = 'assets/images/two.png';
+  static String tree = 'assets/images/tree.png';
+  static String four = 'assets/images/four.png';
+  static String five = 'assets/images/five.png';
+  static String six = 'assets/images/six.png';
+  static String seven = 'assets/images/even.png';
+  static String eight= 'assets/images/eight.png';
+  static String nine = 'assets/images/nine.png';
 }
 
 class PathAudioNumber {
@@ -43,6 +43,17 @@ class PathAudioNumber {
   static String num7 = 'audios/kid-7.mp3';
   static String num8 = 'audios/kid-8.mp3';
   static String num9 = 'audios/kid-9.mp3';
+}
+class NumberList {
+  static String num1 = 'one';
+  static String num2 = 'two';
+  static String num3 = 'three';
+  static String num4 = 'four';
+  static String num5 = 'five';
+  static String num6 = 'six';
+  static String num7 = 'seven';
+  static String num8 = 'eight';
+  static String num9 = 'nine';
 }
 
 class PathAudioColors {
@@ -99,6 +110,7 @@ class PathAudioAlphabet {
   static String alp27 = 'audios/alp27.mp3';
   static String alp28 = 'audios/alp28.mp3';
 }
+
 
 class PathAudioAlphabet1 {
   static String a = 'audios/kid-a.mp3';

@@ -7,5 +7,19 @@
     "product_title5" : "Hayvanlar",
     "product_title6" : "Meyveller",
     "product_title7" : "Yiyecek",
-    "product_title8" : "Spor"
+    "product_title8" : "Spor",
+    "number_one": "bir",
+    "number_two": "iki",
+    "number_tree": "üç",
+    "number_four": "dört",
+    "number_five": "beş",
+    "number_six": "alti",
+    "number_seven": "yedi",
+    "number_eight": "sekiz",
+    "number_nine" : "dokuz",
+    "product_writing":"yazma",
+    "product_drop":"Birakma",
+    "product_find":"Kelimeyi Bul",
+    "product_learn":"Öğrenin"
+
 }

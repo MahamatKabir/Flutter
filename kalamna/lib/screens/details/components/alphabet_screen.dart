@@ -22,9 +22,10 @@ class _AlphabetScreen1State extends State<AlphabetScreen1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.orange[100],
+      backgroundColor: const Color.fromARGB(255, 49, 64, 165),
      appBar: AppBar(
-        title: Text('Alphabe'),
+        title: const Text('Alphabet'),
+        backgroundColor: const Color.fromARGB(255, 49, 64, 165),
       ),
       body: SingleChildScrollView(
           child: Padding(
@@ -40,7 +41,7 @@ class _AlphabetScreen1State extends State<AlphabetScreen1> {
               'assets/images/b1.png',
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           ScreenRowAlphabet(
@@ -53,7 +54,7 @@ class _AlphabetScreen1State extends State<AlphabetScreen1> {
               'assets/images/d1.png',
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           ScreenRowAlphabet(
@@ -66,7 +67,7 @@ class _AlphabetScreen1State extends State<AlphabetScreen1> {
               'assets/images/f1.png',
             ),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           ScreenRowAlphabet(
             onpressedBtn1: () => onClick(newAudio: PathAudioAlphabet1.g),
             onpressedBtn2: () => onClick(newAudio: PathAudioAlphabet1.h),
@@ -77,7 +78,7 @@ class _AlphabetScreen1State extends State<AlphabetScreen1> {
               'assets/images/h1.png',
             ),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           ScreenRowAlphabet(
             onpressedBtn1: () => onClick(newAudio: PathAudioAlphabet1.i),
             onpressedBtn2: () => onClick(newAudio: PathAudioAlphabet1.j),
@@ -88,7 +89,7 @@ class _AlphabetScreen1State extends State<AlphabetScreen1> {
               'assets/images/j1.png',
             ),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           ScreenRowAlphabet(
             onpressedBtn1: () => onClick(newAudio: PathAudioAlphabet1.k),
             onpressedBtn2: () => onClick(newAudio: PathAudioAlphabet1.l),
@@ -99,7 +100,7 @@ class _AlphabetScreen1State extends State<AlphabetScreen1> {
               'assets/images/l1.png',
             ),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           ScreenRowAlphabet(
             onpressedBtn1: () => onClick(newAudio: PathAudioAlphabet1.m),
             onpressedBtn2: () => onClick(newAudio: PathAudioAlphabet1.n),
@@ -110,7 +111,7 @@ class _AlphabetScreen1State extends State<AlphabetScreen1> {
               'assets/images/n1.png',
             ),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           ScreenRowAlphabet(
             onpressedBtn1: () => onClick(newAudio: PathAudioAlphabet1.o),
             onpressedBtn2: () => onClick(newAudio: PathAudioAlphabet1.p),
@@ -121,7 +122,7 @@ class _AlphabetScreen1State extends State<AlphabetScreen1> {
               'assets/images/p1.png',
             ),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           ScreenRowAlphabet(
             onpressedBtn1: () => onClick(newAudio: PathAudioAlphabet1.q),
             onpressedBtn2: () => onClick(newAudio: PathAudioAlphabet1.r),
@@ -132,7 +133,7 @@ class _AlphabetScreen1State extends State<AlphabetScreen1> {
               'assets/images/r1.png',
             ),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           ScreenRowAlphabet(
             onpressedBtn1: () => onClick(newAudio: PathAudioAlphabet1.s),
             onpressedBtn2: () => onClick(newAudio: PathAudioAlphabet1.t),
@@ -143,7 +144,7 @@ class _AlphabetScreen1State extends State<AlphabetScreen1> {
               'assets/images/t1.png',
             ),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           ScreenRowAlphabet(
             onpressedBtn1: () => onClick(newAudio: PathAudioAlphabet1.u),
             onpressedBtn2: () => onClick(newAudio: PathAudioAlphabet1.v),
@@ -154,7 +155,7 @@ class _AlphabetScreen1State extends State<AlphabetScreen1> {
               'assets/images/v1.png',
             ),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           ScreenRowAlphabet(
             onpressedBtn1: () => onClick(newAudio: PathAudioAlphabet1.w),
             onpressedBtn2: () => onClick(newAudio: PathAudioAlphabet1.x),
@@ -165,7 +166,7 @@ class _AlphabetScreen1State extends State<AlphabetScreen1> {
               'assets/images/x1.png',
             ),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           ScreenRowAlphabet(
             onpressedBtn1: () => onClick(newAudio: PathAudioAlphabet1.y),
             onpressedBtn2: () => onClick(newAudio: PathAudioAlphabet1.z),

@@ -5,6 +5,7 @@ class ScreenRow extends StatelessWidget {
   final String title1;
   final String title2;
   final String title3;
+  
 
   //color
   final Color btnColor1;
@@ -96,10 +97,15 @@ class ShowImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
         child: Container(
-      margin: const EdgeInsets.all(10),
+      
+      margin: const EdgeInsets.all(20),
+      
       decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage(image), fit: BoxFit.fill),
-          border: Border.all(color: const Color.fromARGB(255, 11, 7, 133), width: 5),
+         
+          image: DecorationImage(
+            image: AssetImage(image), fit: BoxFit.contain
+            ),
+          border: Border.all(color: const Color.fromARGB(255, 11, 7, 133), width: 5,),
           borderRadius: const BorderRadius.all(Radius.circular(15))),
     ));
   }

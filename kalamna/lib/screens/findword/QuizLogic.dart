@@ -146,41 +146,123 @@ class QuizLogic2 {
 
   List <Question> questions = [
     Question(
-      flagName: '1.png', 
+      flagName: 'one.png', 
       answer1: 'one', 
       answer2: 'six', 
       answer3: 'seven', 
       correctAnswer: 'one'
     ),
      Question(
-      flagName: '8.png', 
+      flagName: 'eight.png', 
       answer1: 'eight', 
       answer2: 'nine', 
       answer3: 'tree', 
       correctAnswer: 'eight'
     ),
      Question(
-      flagName: '4.png', 
+      flagName: 'four.png', 
       answer1: 'four', 
       answer2: 'eight', 
       answer3: 'tree', 
       correctAnswer: 'four'
     ),
      Question(
-      flagName: '7.png',  
+      flagName: 'seven.png',  
       answer1: 'tree', 
       answer2: 'seven', 
       answer3: 'one', 
       correctAnswer: 'seven'
     ),
      Question(
-      flagName: '3.png',  
+      flagName: 'tree.png',  
       answer1: 'five', 
       answer2: 'four', 
       answer3: 'tree', 
       correctAnswer: 'tree'
     )
 
+  ];
+
+  String getFlagName(){
+    return questions[_questionIndex].flagName;
+  }
+
+  String getAnswer1(){
+    return questions[_questionIndex].answer1;
+  }
+  String getAnswer2(){
+    return questions[_questionIndex].answer2;
+  }
+  String getAnswer3(){
+    return questions[_questionIndex].answer3;
+  }
+  String getCorrectAnswer(){
+    return questions[_questionIndex].correctAnswer;
+  }
+
+  bool isFinished(){
+    if(_questionIndex >= questions.length -1) return true;
+    return false;
+  }
+  nextQuestion() {
+    _questionIndex++;
+  }
+}
+
+class QuizLogic3 {
+
+  int _questionIndex = 0;
+
+  List <Question> questions = [
+    Question(
+      flagName: 'brown.png', 
+      answer1: 'blue', 
+      answer2: 'brown', 
+      answer3: 'orange', 
+      correctAnswer: 'brown'
+    ),
+     Question(
+      flagName: 'blue.png', 
+      answer1: 'blue', 
+      answer2: 'black', 
+      answer3: 'white', 
+      correctAnswer: 'blue'
+    ),
+     Question(
+      flagName: 'orange.png', 
+      answer1: 'purple', 
+      answer2: 'pink', 
+      answer3: 'orange', 
+      correctAnswer: 'orange'
+    ),
+     Question(
+      flagName: 'green.png',  
+      answer1: 'white', 
+      answer2: 'green', 
+      answer3: 'blue', 
+      correctAnswer: 'green'
+    ),
+     Question(
+      flagName: 'black.png',  
+      answer1: 'red', 
+      answer2: 'orange', 
+      answer3: 'black', 
+      correctAnswer: 'black'
+    ),
+     Question(
+      flagName: 'pink.png',  
+      answer1: 'purple', 
+      answer2: 'pink', 
+      answer3: 'black', 
+      correctAnswer: 'pink'
+    ),
+     Question(
+      flagName: 'white.png',  
+      answer1: 'white', 
+      answer2: 'pink', 
+      answer3: 'brown', 
+      correctAnswer: 'white'
+    )
   ];
 
   String getFlagName(){

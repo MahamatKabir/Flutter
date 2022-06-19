@@ -7,7 +7,20 @@
    "product_title5" : "Animaux",
    "product_title6" : "Fruits",
    "product_title7" : "Aliment",
-   "product_title8" : "Sport"
+   "product_title8" : "Sport",
+   "number_one": "un",
+   "nombre_two": "deux",
+   "number_tree": "trois",
+   "number_four": "quatre",
+   "number_five": "cinq",
+   "numbre_six": "six",
+   "numbre_seven": "sept",
+   "number_eight": "huit",
+   "number_nine": "neuf",
+   "product_writing":"écriture",
+   "product_drop":"Déposer",
+   "product_find":"Trouvez le mot",
+   "product_learn":"Apprendre"
 
    
    

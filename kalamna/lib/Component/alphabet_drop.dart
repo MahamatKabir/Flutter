@@ -24,7 +24,7 @@ class _AlphabetDropState extends State<AlphabetDrop> {
       ItemModel(value: 'c', name: 'c', img: 'assets/images/c1.png'),
       ItemModel(value: 'd', name: 'd', img: 'assets/images/d1.png'),
       ItemModel(value: 'e', name: 'e', img: 'assets/images/e1.png'),
-      ItemModel(value: 'f', name: 'f', img: 'assets/images/w1.png'),
+      ItemModel(value: 'w', name: 'w', img: 'assets/images/w1.png'),
     ];
     items2 = List<ItemModel>.from(items);
     items.shuffle();
@@ -43,18 +43,18 @@ class _AlphabetDropState extends State<AlphabetDrop> {
 
     return Scaffold(
       appBar:AppBar(
-      backgroundColor: Color.fromARGB(255, 11, 5, 75),
+      backgroundColor: const Color.fromARGB(255, 11, 5, 75),
       elevation: 0,
       leading: IconButton(
         icon: SvgPicture.asset(
           'assets/icons/back.svg',
-          color: Color.fromARGB(255, 255, 255, 255),
+          color: const Color.fromARGB(255, 255, 255, 255),
         ),
         onPressed: () => Navigator.pop(context),
       ),
      
     ),
-        backgroundColor: Color.fromARGB(255, 11, 5, 75),
+        backgroundColor: const Color.fromARGB(255, 11, 5, 75),
         body: SafeArea(
             child: SingleChildScrollView(
                 child: Column(
@@ -66,14 +66,14 @@ class _AlphabetDropState extends State<AlphabetDrop> {
               children: [
                 TextSpan(
                   text: 'Score : ',
-                  style: Theme.of(context).textTheme.subtitle1,
+                  style: Theme.of(context).textTheme.subtitle2?.copyWith(color:Colors.white),
                 ),
                 TextSpan(
                   text: '$score : ',
                   style: Theme.of(context)
                       .textTheme
                       .headline2
-                      ?.copyWith(color: Colors.teal),
+                      ?.copyWith(color: Colors.white),
                 ),
               ],
             ),
@@ -82,32 +82,32 @@ class _AlphabetDropState extends State<AlphabetDrop> {
         if (!gameOver)
           Row(
             children: [
-              Spacer(),
+              const Spacer(),
               Column(
                   children: items.map((item) {
                 return Container(
-                  margin: EdgeInsets.all(8),
+                  margin: const EdgeInsets.all(8),
                   child: Draggable<ItemModel>(
                     data: item,
                     childWhenDragging: CircleAvatar(
-                      backgroundColor: Color.fromARGB(255, 175, 21, 21),
+                      backgroundColor: const Color.fromARGB(255, 175, 21, 21),
                       backgroundImage: AssetImage(item.img),
                       radius: 50,
                     ),
                     feedback: CircleAvatar(
-                      backgroundColor: Color.fromARGB(255, 66, 8, 8),
+                      backgroundColor: const Color.fromARGB(255, 66, 8, 8),
                       backgroundImage: AssetImage(item.img),
-                      radius: 30,
+                      radius: 40,
                     ),
                     child: CircleAvatar(
-                      backgroundColor: Color.fromARGB(255, 255, 255, 255),
+                      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                       backgroundImage: AssetImage(item.img),
-                      radius: 30,
+                      radius: 35,
                     ),
                   ),
                 );
               }).toList()),
-              Spacer(flex: 2),
+              const Spacer(flex: 2),
               Column(
                   children: items2.map((item) {
                 return DragTarget<ItemModel>(
@@ -142,7 +142,7 @@ class _AlphabetDropState extends State<AlphabetDrop> {
                   },
                   builder: (context, acceptedItems, rejectedItems) => Container(
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(20),
                         color: item.accepting
                             ? Colors.grey[400]
                             : Colors.grey[200],
@@ -150,14 +150,15 @@ class _AlphabetDropState extends State<AlphabetDrop> {
                       alignment: Alignment.center,
                       height: MediaQuery.of(context).size.width / 6.5,
                       width: MediaQuery.of(context).size.width / 3,
-                      margin: EdgeInsets.all(8),
+                      margin: const EdgeInsets.all(12),
                       child: Text(
                         item.name,
-                        style: Theme.of(context).textTheme.headline6,
+                        
+                        style: Theme.of(context).textTheme.headline6?.copyWith(fontSize:45),
                       )),
                 );
               }).toList()),
-              Spacer(),
+              const Spacer(),
             ],
           ),
         if (gameOver)
@@ -193,7 +194,7 @@ class _AlphabetDropState extends State<AlphabetDrop> {
                   initGame();
                 });
               },
-              child: Text(
+              child: const Text(
                 'New Game',
                 style: TextStyle(color: Color.fromARGB(255, 139, 25, 25)),
               ),
@@ -204,11 +205,11 @@ class _AlphabetDropState extends State<AlphabetDrop> {
   }
 
   String result() {
-    if (score == 100) {
+    if (score == 60) {
       player.play('success.wav');
       return 'Awesome!';
     } else {
-      player.play('tryAgain.wav');
+      player.play('success.wav');
       return 'Play again to get better score';
     }
   }

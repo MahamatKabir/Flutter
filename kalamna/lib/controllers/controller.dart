@@ -22,6 +22,7 @@ class Controller extends ChangeNotifier {
        AudioCache().play('audios/correct_1.aiff');
        wordsAnswered++;
        percentCompleted = wordsAnswered / allWords.length;
+       percentCompleted = wordsAnswered / numberWords.length;
        if(wordsAnswered == allWords.length){
            sessionCompleted =true;
        }

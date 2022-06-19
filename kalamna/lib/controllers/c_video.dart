@@ -1,6 +1,7 @@
 import 'package:kalamna/models/m_learn.dart';
 
 class ControllerVideo {
+  // ignore: prefer_final_fields
   static List<ModellPages> _dataVideo = [
     ModellPages(
         imageUrl: 'https://i.ytimg.com/vi/MGyFM2ddbp4/mqdefault.jpg',

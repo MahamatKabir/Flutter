@@ -38,7 +38,7 @@ class MessageBox extends StatelessWidget {
               if(sessionCompleted){
                 Provider.of<Controller>(context, listen: false).reset();
                 Navigator.of(context).pushReplacement(MaterialPageRoute(
-                  builder: (context) => Spelli()));
+                  builder: (context) => Spelli() ));
               }else{
                 Provider.of<Controller>(context, listen:false).requestWord(request:true);
                 Navigator.of(context).pop();

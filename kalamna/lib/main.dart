@@ -54,7 +54,6 @@ class _MyAppState extends State<MyApp> {
     } else {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-       
         title: 'Flutter Demo',
         theme: ThemeData(
           textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
@@ -69,7 +68,7 @@ class _MyAppState extends State<MyApp> {
           ),
           duration: 500,
           splashTransition: SplashTransition.rotationTransition,
-          backgroundColor: Color.fromARGB(255, 255, 255, 255),
+          backgroundColor:const Color.fromARGB(255, 255, 255, 255),
           nextScreen: WelcomePage(),
         ),
        //set Localizations

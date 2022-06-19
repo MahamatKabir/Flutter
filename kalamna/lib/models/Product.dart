@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:kalamna/spellingbe/spelli.dart';
 import '../Component/alphabet_drop.dart';
+import '../Component/color_drop.dart';
 import '../Component/dragDrop.dart';
 import '../Component/number_drop.dart';
 import '../screens/Animal_Screen.dart';
@@ -10,8 +11,11 @@ import '../screens/details/components/alphabet_screen.dart';
 import '../screens/details/components/color_screen.dart';
 import '../screens/details/components/number_screen.dart';
 import '../screens/findword/Findalphabet_screen.dart';
+import '../screens/findword/Findanimal_screen.dart';
 import '../screens/findword/Findcolor_screen.dart';
 import '../screens/findword/Findnumber_screen.dart';
+import '../spellingbe/colorSpelli.dart';
+import '../spellingbe/numberSpelli.dart';
 
 class Product {
   final String image, title, description;
@@ -37,7 +41,6 @@ List<Product> products = [
       id: 1,
       title: "Alphabet",
       size:2,
-     
       description: dummyText,
       page: AlphabetScreen1(),
       drop: AlphabetDrop(),
@@ -52,7 +55,7 @@ List<Product> products = [
       page: NumberScreen(),
       drop: NumberDrop(),
       find:FindNumberScreen(),
-      spell: Spelli(),
+      spell: const NumberSpelli(),
       image: "assets/images/sayi.png",
       color: const Color.fromARGB(255, 255, 255, 255)),
   Product(
@@ -61,22 +64,10 @@ List<Product> products = [
       size: 10,
       description: dummyText,
       page: ColorScreen(),
-      drop: AlphabetDrop(),
-      find:FindAlphabetScreen(),
-      spell: Spelli(),
+      drop:  ColorDrop(),
+      find:FindanimalScreen(),
+      spell: const ColorSpelli(),
       image: "assets/images/rengler.png",
-      color: const Color.fromARGB(255, 255, 255, 255)),
-      
-  Product(
-      id: 4,
-      title: "Shapes",
-      size: 11,
-      description: dummyText,
-      page: AlphabetScreen1(),
-      drop: AlphabetDrop(),
-      find:FindAlphabetScreen(),
-      spell: Spelli(),
-      image: "assets/images/sekil.png",
       color: const Color.fromARGB(255, 255, 255, 255)),
   Product(
       id: 5,
@@ -89,6 +80,17 @@ List<Product> products = [
       spell: Spelli(),
       image: "assets/images/hayvan.png",
       color: const Color.fromARGB(255, 255, 254, 255)),
+  Product(
+      id: 4,
+      title: "Shapes",
+      size: 11,
+      description: dummyText,
+      page: AlphabetScreen1(),
+      drop: AlphabetDrop(),
+      find:FindAlphabetScreen(),
+      spell: Spelli(),
+      image: "assets/images/sekil.png",
+      color: const Color.fromARGB(255, 255, 255, 255)),
   Product(
     id: 6,
     title: "Fruits",

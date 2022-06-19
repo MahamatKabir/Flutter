@@ -1,6 +1,7 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import '../../../controllers/c_screenl.dart';
+import '../../../localization/localization_constants.dart';
 import '/Component/card_screens.dart';
 
 
@@ -22,12 +23,12 @@ class _NumberScreenState extends State<NumberScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 255, 255),
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
     appBar: AppBar(
-        backgroundColor:Color.fromARGB(255, 11, 7, 133),
-        title: Text(
+        backgroundColor:const Color.fromARGB(255, 11, 7, 133),
+        title: const Text(
           'Numbers',
-          style: const TextStyle(
+          style: TextStyle(
             color:Colors.white , fontWeight: FontWeight.bold)),
       ),
       body: SafeArea(
@@ -36,7 +37,7 @@ class _NumberScreenState extends State<NumberScreen> {
               child: Column(
                 children: [
                   ShowImage(image: imageView),
-                  SizedBox(height: 2),
+                  const SizedBox(height: 2),
                   Expanded(
                     child: Column(children: [
                       ScreenRow(
@@ -52,12 +53,12 @@ class _NumberScreenState extends State<NumberScreen> {
                             onClick(
                               newImage: PathImageNumber.tree,
                               newAudio: PathAudioNumber.num3),
-                        title1: 'one',
-                        title2: 'two',
-                        title3: 'tree',
-                        btnColor2: Color.fromARGB(255, 11, 7, 133),
+                        title1: getTranslated(context, "number_one"),
+                        title2: getTranslated(context, "number_two"),
+                        title3: getTranslated(context, "number_tree"),
+                        btnColor2: const Color.fromARGB(255, 11, 7, 133),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 2,
                       ),
                       ScreenRow(
@@ -73,12 +74,12 @@ class _NumberScreenState extends State<NumberScreen> {
                             onClick(
                               newImage: PathImageNumber.six,
                               newAudio: PathAudioNumber.num6),
-                        title1: 'four',
-                        title2: 'five',
-                        title3: 'six',
-                        btnColor1: Color.fromARGB(255, 11, 7, 133),
+                        title1: getTranslated(context, "number_four"),
+                        title2: getTranslated(context, "number_five"),
+                        title3: getTranslated(context, "number_six"),
+                        btnColor1: const Color.fromARGB(255, 11, 7, 133),
                       ),
-                      SizedBox(height: 2),
+                      const SizedBox(height: 2),
                       ScreenRow(
                         onpressedBtn1: () =>
                             onClick(
@@ -90,12 +91,14 @@ class _NumberScreenState extends State<NumberScreen> {
                               newAudio: PathAudioNumber.num8),
                         onpressedBtn3: () =>
                             onClick(
+                              
                               newImage: PathImageNumber.nine,
+
                               newAudio: PathAudioNumber.num9),
-                        title1: 'seven',
-                        title2: 'eight',
-                        title3: 'nine',
-                        btnColor3: Color.fromARGB(255, 11, 7, 133),
+                        title1: getTranslated(context, "number_seven"),
+                        title2: getTranslated(context, "number_eight"),
+                        title3: getTranslated(context, "number_nine"),
+                        btnColor3: const Color.fromARGB(255, 11, 7, 133),
                       ),
                     ]),
                   )
@@ -104,7 +107,7 @@ class _NumberScreenState extends State<NumberScreen> {
     );
   }
 
-  void onClick({required String newImage,required String newAudio}) async {
+  void onClick({required String newImage, required String newAudio}) async {
     setState(() {
       imageView = newImage;
     });

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:kalamna/models/Product.dart';
 
+import '../../../constants.dart';
+import '../../../localization/localization_constants.dart';
+
 class Body extends StatelessWidget {
   final Product product;
   final bool? remov;
@@ -52,16 +55,28 @@ class Body extends StatelessWidget {
                   child: Center(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
-                      children: const [
-                        Image(
+                      children: [
+                        const Image(
                             image: AssetImage('assets/images/lerarniss.png'),
                             width: 100),
-                        Text('Learn',
+                        const Text('Learn',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black)),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: kDefaultPaddin / 4),
+                          child: Text(
+                            getTranslated(context, "product_learn"),
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -83,16 +98,28 @@ class Body extends StatelessWidget {
                   child: Center(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
-                      children: const [
-                        Image(
+                      children: [
+                        const Image(
                             image: AssetImage('assets/images/finds.jpeg'),
                             width: 100),
-                        Text('Find the word',
+                        const Text('Find the word',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black)),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: kDefaultPaddin / 4),
+                          child: Text(
+                            getTranslated(context, "product_find"),
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -114,16 +141,28 @@ class Body extends StatelessWidget {
                   child: Center(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
-                      children: const [
-                        Image(
+                      children: [
+                        const Image(
                             image: AssetImage('assets/images/dropdrag.png'),
                             width: 100),
-                        Text('Drop',
+                        const Text('Drop',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black)),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: kDefaultPaddin / 4),
+                          child: Text(
+                            getTranslated(context, "product_drop"),
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -146,16 +185,28 @@ class Body extends StatelessWidget {
                     child: Center(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
-                        children: const [
-                          Image(
+                        children: [
+                          const Image(
                               image: AssetImage('assets/images/pencil.jpeg'),
                               width: 100),
-                          Text('Writing',
+                          const Text('Writing',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black)),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: kDefaultPaddin / 4),
+                            child: Text(
+                              getTranslated(context, "product_writing"),
+                              style: const TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),

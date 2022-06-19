@@ -4,13 +4,13 @@ import 'QuizLogic.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
-class FindNumberScreen extends StatefulWidget {
+class FindanimalScreen extends StatefulWidget {
   @override
-  State<FindNumberScreen> createState() => _FindNumberScreenState();
+  State<FindanimalScreen> createState() => _FindanimalScreenState();
 }
 
-class _FindNumberScreenState extends State<FindNumberScreen> {
-  QuizLogic2 quizLogic = QuizLogic2();
+class _FindanimalScreenState extends State<FindanimalScreen> {
+  QuizLogic3 quizLogic = QuizLogic3();
   List<Icon> scoresIcon = [];
   int numberOfGoodAnswer = 0;
   late Timer timer;
@@ -77,11 +77,11 @@ class _FindNumberScreenState extends State<FindNumberScreen> {
       Alert(
         context: context,
         title: "Game Over",
-        desc: "You have  $numberOfGoodAnswer good answe",
+        desc: "You have  $numberOfGoodAnswer good answer",
         buttons: [
           DialogButton(
             child: const Text(
-              "Leave",
+              "Quitter",
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
             onPressed: () {
@@ -131,7 +131,7 @@ class _FindNumberScreenState extends State<FindNumberScreen> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
               Container(
-                color: Colors.white,
+                color: Colors.red,
                 height: 300,
                 child: Image.asset('assets/images/${quizLogic.getFlagName()}'),
               ),
@@ -159,7 +159,7 @@ class _FindNumberScreenState extends State<FindNumberScreen> {
                     handleAnswers(quizLogic.getAnswer2());
                   },
                   child: Text(
-                      quizLogic.getAnswer2(),
+                      '${quizLogic.getAnswer2()}',
                       style: const TextStyle(fontSize: 20.0),
                   ),
                    shape: RoundedRectangleBorder(
@@ -175,7 +175,7 @@ class _FindNumberScreenState extends State<FindNumberScreen> {
                   onPressed: () {
                     handleAnswers(quizLogic.getAnswer3());
                   },
-                  child: Text(quizLogic.getAnswer3(),
+                  child: Text('${quizLogic.getAnswer3()}',
                       style: const TextStyle(fontSize: 20.0)
                   ),
                    shape: RoundedRectangleBorder(

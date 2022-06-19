@@ -7,5 +7,19 @@
     "product_title5": "الحيوانات",
     "product_title6": "الفاكهة",
     "product_title7": "طعام",
-    "product_title8": "الرياضة"
+    "product_title8": "الرياضة",
+    "number_one": "واحد",
+    "numbre_two": "اثنين",
+    "number_tree": "ثلاثة",
+    "number_four": "أربعة",
+    "number_five": "خمسة",
+    "numbre_six": "ستة",
+    "numbre_seven": "سبعة",
+    "number_eight": "ثمانية",
+    "number_nine": "تسع",
+    "product_learn": "التعلم",
+    "product_writing":"اكتب",
+    "product_drop":"يسقط",
+    "product_find":"اوجد الكلمات"
+    
 }

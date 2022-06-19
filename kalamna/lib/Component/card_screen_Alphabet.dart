@@ -53,8 +53,8 @@ class ScreenBtnAlphabet extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onpressedBtn,
         style: ElevatedButton.styleFrom(
-            primary: Colors.orange[100],
-            onPrimary: Colors.white,
+            primary: const Color.fromARGB(255, 8, 25, 88),
+            onPrimary:const Color.fromARGB(255, 8, 25, 88),
             textStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
             padding: const EdgeInsets.all(8),
             minimumSize: const Size(100, 100)),
