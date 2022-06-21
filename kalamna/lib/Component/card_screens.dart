@@ -5,7 +5,6 @@ class ScreenRow extends StatelessWidget {
   final String title1;
   final String title2;
   final String title3;
-  
 
   //color
   final Color btnColor1;
@@ -26,7 +25,7 @@ class ScreenRow extends StatelessWidget {
     required this.onpressedBtn3,
     this.btnColor1 = const Color.fromARGB(255, 11, 7, 133),
     this.btnColor2 = const Color.fromARGB(255, 11, 7, 133),
-    this.btnColor3 = const Color.fromARGB(255, 11, 7, 133), 
+    this.btnColor3 = const Color.fromARGB(255, 11, 7, 133),
   });
 
   @override
@@ -79,7 +78,8 @@ class ScreenBtn extends StatelessWidget {
               primary: btncolor,
               onPrimary: Colors.white,
               elevation: 10,
-              textStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+              textStyle:
+                  const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
               padding: const EdgeInsets.all(8),
               minimumSize: const Size(100, 50)),
           child: Text(title)),
@@ -90,24 +90,46 @@ class ScreenBtn extends StatelessWidget {
 
 class ShowImage extends StatelessWidget {
   final String image;
-
   ShowImage({required this.image});
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
         child: Container(
-      
       margin: const EdgeInsets.all(20),
-      
       decoration: BoxDecoration(
-         
-          image: DecorationImage(
-            image: AssetImage(image), fit: BoxFit.contain
-            ),
-          border: Border.all(color: const Color.fromARGB(255, 11, 7, 133), width: 5,),
+          image: DecorationImage(image: AssetImage(image), fit: BoxFit.contain),
+          border: Border.all(
+            color: const Color.fromARGB(255, 11, 7, 133),
+            width: 5,
+          ),
           borderRadius: const BorderRadius.all(Radius.circular(15))),
     ));
+  }
+}
+
+class ShowText extends StatelessWidget {
+  final String textie;
+
+  ShowText({required this.textie});
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.center,
+      child: Text(
+        textie,
+        style: TextStyle(
+          letterSpacing: 3.0,
+          fontSize: 40,
+          fontWeight: FontWeight.bold,
+          foreground: Paint()
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 2
+            ..color= const Color(0xFF262AAA),
+        ),
+      ),
+    );
   }
 }
 
@@ -183,7 +205,8 @@ class ScreenBtnColors extends StatelessWidget {
             primary: btncolor,
             onPrimary: Colors.white,
             elevation: 10,
-            textStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+            textStyle:
+                const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
             padding: const EdgeInsets.all(8),
             minimumSize: const Size(100, 100)),
         child: image,

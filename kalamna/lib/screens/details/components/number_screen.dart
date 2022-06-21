@@ -12,6 +12,7 @@ class NumberScreen extends StatefulWidget {
 
 class _NumberScreenState extends State<NumberScreen> {
    String imageView = 'assets/images/number1.jpg';
+   String imagevi = 'number';
   AudioCache audioCache = AudioCache();
   AudioPlayer audioPlayer = AudioPlayer();
   @override
@@ -36,21 +37,25 @@ class _NumberScreenState extends State<NumberScreen> {
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
-                  ShowImage(image: imageView),
+                   ShowText( textie:  imagevi),    
+                  ShowImage(image: imageView),        
                   const SizedBox(height: 2),
                   Expanded(
                     child: Column(children: [
                       ScreenRow(
                         onpressedBtn1: () =>
                             onClick(
+                              newText:NumberList.num1,
                               newImage: PathImageNumber.one,
                               newAudio: PathAudioNumber.num1),
                         onpressedBtn2: () =>
                             onClick(
+                              newText:NumberList.num2,
                               newImage: PathImageNumber.two,
                               newAudio: PathAudioNumber.num2),
                         onpressedBtn3: () =>
                             onClick(
+                              newText:NumberList.num3,
                               newImage: PathImageNumber.tree,
                               newAudio: PathAudioNumber.num3),
                         title1: getTranslated(context, "number_one"),
@@ -64,14 +69,17 @@ class _NumberScreenState extends State<NumberScreen> {
                       ScreenRow(
                         onpressedBtn1: () =>
                             onClick(
+                              newText:NumberList.num4,
                               newImage: PathImageNumber.four,
                               newAudio: PathAudioNumber.num4),
                         onpressedBtn2: () =>
                             onClick(
+                              newText:NumberList.num5,
                               newImage: PathImageNumber.five,
                               newAudio: PathAudioNumber.num5),
                         onpressedBtn3: () =>
                             onClick(
+                              newText:NumberList.num6,
                               newImage: PathImageNumber.six,
                               newAudio: PathAudioNumber.num6),
                         title1: getTranslated(context, "number_four"),
@@ -83,15 +91,17 @@ class _NumberScreenState extends State<NumberScreen> {
                       ScreenRow(
                         onpressedBtn1: () =>
                             onClick(
+                              newText:NumberList.num7,
                               newImage: PathImageNumber.seven,
                               newAudio: PathAudioNumber.num7),
                         onpressedBtn2: () =>
                             onClick(
+                              newText:NumberList.num8,
                               newImage: PathImageNumber.eight,
                               newAudio: PathAudioNumber.num8),
                         onpressedBtn3: () =>
                             onClick(
-                              
+                              newText:NumberList.num9,
                               newImage: PathImageNumber.nine,
 
                               newAudio: PathAudioNumber.num9),
@@ -107,8 +117,10 @@ class _NumberScreenState extends State<NumberScreen> {
     );
   }
 
-  void onClick({required String newImage, required String newAudio}) async {
+  void onClick({required String newImage,required String newText,
+  required String newAudio}) async {
     setState(() {
+      imagevi = newText;
       imageView = newImage;
     });
     audioPlayer.stop();

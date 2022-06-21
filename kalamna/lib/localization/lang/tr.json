@@ -20,6 +20,15 @@
     "product_writing":"yazma",
     "product_drop":"Birakma",
     "product_find":"Kelimeyi Bul",
-    "product_learn":"Öğrenin"
+    "product_learn":"Öğrenin",
+    "color_blue":"mavi",
+    "color_black":"siyah",
+    "color_orange":"turuncu",
+    "color_white":"beyaz",
+    "color_purple":"mor",
+    "color_pink":"pembe",
+    "color_green":"yeşil",
+    "color_brown":"kahverengi",
+    "color_red":"kirmizi"
 
 }

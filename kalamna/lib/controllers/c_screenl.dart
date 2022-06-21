@@ -68,6 +68,23 @@ class PathAudioColors {
   static String white = 'audios/white.wav';
 
 }
+
+class ColorList {
+  static String black = 'black';
+  static String blue = 'blue';
+  static String brown = 'brown';
+  static String green = 'green';
+  static String orange = 'orange';
+  static String pink = 'pink';
+  static String purple = 'purple';
+  static String red = 'red';
+  static String white = 'white';
+
+}
+
+
+
+
 class PathImageColor {
   static String black = 'assets/images/black.png';
   static String green = 'assets/images/green.png';

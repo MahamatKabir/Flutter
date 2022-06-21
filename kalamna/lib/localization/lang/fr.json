@@ -20,7 +20,16 @@
    "product_writing":"écriture",
    "product_drop":"Déposer",
    "product_find":"Trouvez le mot",
-   "product_learn":"Apprendre"
+   "product_learn":"Apprendre",
+   "color_blue":"bleu",
+   "color_black":"noir",
+   "color_orange":"orange",
+   "color_white":"blanc",
+   "color_purple":"violet",
+   "color_pink":"rose",
+   "color_green":"vert",
+   "color_brown":"marron",
+   "color_red":"rouge"
 
    
    

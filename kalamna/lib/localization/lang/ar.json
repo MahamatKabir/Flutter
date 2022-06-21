@@ -20,6 +20,15 @@
     "product_learn": "التعلم",
     "product_writing":"اكتب",
     "product_drop":"يسقط",
-    "product_find":"اوجد الكلمات"
+    "product_find":"اوجد الكلمات",
+    "color_blue": "أزرق",
+     "color_black": "أسود" ,
+     "color_orange": "برتقالي",
+     "color_white": "أبيض",
+     "color_purple": "أرجواني",
+     "color_pink": "وردي",
+     "color_green": "أخضر",
+     "color_brown": "بني",
+     "color_red": "أحمر"
     
 }
