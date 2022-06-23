@@ -64,7 +64,7 @@ class Body extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.black)),
+                                color: const Color(0xFF262AAA),)),
                         Padding(
                           padding: const EdgeInsets.symmetric(
                               vertical: kDefaultPaddin / 4),
@@ -107,7 +107,7 @@ class Body extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.black)),
+                                color: const Color(0xFF262AAA),)),
                         Padding(
                           padding: const EdgeInsets.symmetric(
                               vertical: kDefaultPaddin / 4),
@@ -150,7 +150,7 @@ class Body extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.black)),
+                                color: const Color(0xFF262AAA),)),
                         Padding(
                           padding: const EdgeInsets.symmetric(
                               vertical: kDefaultPaddin / 4),
@@ -194,7 +194,7 @@ class Body extends StatelessWidget {
                               style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.black)),
+                                  color: const Color(0xFF262AAA),)),
                           Padding(
                             padding: const EdgeInsets.symmetric(
                                 vertical: kDefaultPaddin / 4),
