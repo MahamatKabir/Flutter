@@ -81,10 +81,6 @@ class ColorList {
   static String white = 'white';
 
 }
-
-
-
-
 class PathImageColor {
   static String black = 'assets/images/black.png';
   static String green = 'assets/images/green.png';
@@ -97,36 +93,7 @@ class PathImageColor {
   static String white = 'assets/images/white.png';
 }
 
-class PathAudioAlphabet {
-  static String alp1 = 'audios/alp1.mp3';
-  static String alp2 = 'audios/alp2.mp3';
-  static String alp3 = 'audios/alp3.mp3';
-  static String alp4 = 'audios/alp4.mp3';
-  static String alp5 = 'audios/alp5.mp3';
-  static String alp6 = 'audios/alp6.mp3';
-  static String alp7 = 'audios/alp7.mp3';
-  static String alp8 = 'audios/alp8.mp3';
-  static String alp9 = 'audios/alp9.mp3';
-  static String alp10 = 'audios/alp10.mp3';
-  static String alp11 = 'audios/alp11.mp3';
-  static String alp12 = 'audios/alp12.mp3';
-  static String alp13 = 'audios/alp13.mp3';
-  static String alp14 = 'audios/alp14.mp3';
-  static String alp15 = 'audios/alp15.mp3';
-  static String alp16 = 'audios/alp16.mp3';
-  static String alp17 = 'audios/alp17.mp3';
-  static String alp18 = 'audios/alp18.mp3';
-  static String alp19 = 'audios/alp19.mp3';
-  static String alp20 = 'audios/alp20.mp3';
-  static String alp21 = 'audios/alp21.mp3';
-  static String alp22 = 'audios/alp22.mp3';
-  static String alp23 = 'audios/alp23.mp3';
-  static String alp24 = 'audios/alp24.mp3';
-  static String alp25 = 'audios/alp25.mp3';
-  static String alp26 = 'audios/alp26.mp3';
-  static String alp27 = 'audios/alp27.mp3';
-  static String alp28 = 'audios/alp28.mp3';
-}
+
 
 
 class PathAudioAlphabet1 {

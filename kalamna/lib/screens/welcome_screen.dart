@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:kalamna/sidebar/sidebar_layout.dart';
 import 'delayed_animation.dart';
 
+
 class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

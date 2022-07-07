@@ -20,12 +20,12 @@ class MenuItem extends StatelessWidget {
               color: Colors.cyan,
               size: 30,
             ),
-            SizedBox(
+            const SizedBox(
               width: 20,
             ),
             Text(
               title,
-              style: TextStyle(fontWeight: FontWeight.w300, fontSize: 26, color: Colors.white),
+              style: const TextStyle(fontWeight: FontWeight.w300, fontSize: 26, color: Colors.white),
             )
           ],
         ),
